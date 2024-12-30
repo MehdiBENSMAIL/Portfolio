@@ -5,13 +5,23 @@
    * Header toggle
    */
   const headerToggleBtn = document.querySelector('.header-toggle');
+  const header = document.querySelector('#header');
 
   function headerToggle() {
-    document.querySelector('#header').classList.toggle('header-show');
+    header.classList.toggle('header-show');
     headerToggleBtn.classList.toggle('bi-list');
     headerToggleBtn.classList.toggle('bi-x');
   }
   headerToggleBtn.addEventListener('click', headerToggle);
+
+  // Fermer la navbar si on clique en dehors
+  document.addEventListener('click', function (event) {
+    if (!header.contains(event.target) && !headerToggleBtn.contains(event.target)) {
+      if (header.classList.contains('header-show')) {
+        headerToggle();
+      }
+    }
+  });
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -22,7 +32,6 @@
         headerToggle();
       }
     });
-
   });
 
   /**
@@ -146,7 +155,7 @@
 
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
       filters.addEventListener('click', function () {
-        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
+        isotopeItem.querySelector('.isotope-filters .filter-active').class.remove('filter-active');
         this.classList.add('filter-active');
         initIsotope.arrange({
           filter: this.getAttribute('data-filter')
@@ -228,3 +237,4 @@
   window.addEventListener('scroll', updateScrollProgress);
 
 })();
+
