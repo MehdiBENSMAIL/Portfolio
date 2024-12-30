@@ -1255,6 +1255,17 @@ section,
   color: var(--accent-color);
 }
 
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background: #4caf50;
+  width: 0;
+  z-index: 9999;
+}
+
+
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/

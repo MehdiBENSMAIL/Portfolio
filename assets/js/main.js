@@ -218,4 +218,13 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  function updateScrollProgress() {
+    const scrollProgress = document.getElementById('scroll-progress');
+    const totalHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / totalHeight) * 100;
+    scrollProgress.style.width = progress + '%';
+  }
+
+  window.addEventListener('scroll', updateScrollProgress);
+
 })();
