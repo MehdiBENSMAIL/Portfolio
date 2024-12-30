@@ -5,23 +5,13 @@
    * Header toggle
    */
   const headerToggleBtn = document.querySelector('.header-toggle');
-  const header = document.querySelector('#header');
 
   function headerToggle() {
-    header.classList.toggle('header-show');
+    document.querySelector('#header').classList.toggle('header-show');
     headerToggleBtn.classList.toggle('bi-list');
     headerToggleBtn.classList.toggle('bi-x');
   }
   headerToggleBtn.addEventListener('click', headerToggle);
-
-  // Fermer la navbar si on clique en dehors
-  document.addEventListener('click', function (event) {
-    if (!header.contains(event.target) && !headerToggleBtn.contains(event.target)) {
-      if (header.classList.contains('header-show')) {
-        headerToggle();
-      }
-    }
-  });
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -155,7 +145,7 @@
 
     isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
       filters.addEventListener('click', function () {
-        isotopeItem.querySelector('.isotope-filters .filter-active').class.remove('filter-active');
+        isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');
         this.classList.add('filter-active');
         initIsotope.arrange({
           filter: this.getAttribute('data-filter')
@@ -165,7 +155,6 @@
         }
       }, false);
     });
-
   });
 
   /**
@@ -222,19 +211,36 @@
       } else {
         navmenulink.classList.remove('active');
       }
-    })
+    });
   }
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Scroll progress bar
+   */
   function updateScrollProgress() {
     const scrollProgress = document.getElementById('scroll-progress');
     const totalHeight = document.body.scrollHeight - window.innerHeight;
     const progress = (window.scrollY / totalHeight) * 100;
     scrollProgress.style.width = progress + '%';
   }
-
   window.addEventListener('scroll', updateScrollProgress);
 
-})();
+  /**
+   * Close navbar when clicking outside
+   */
+  document.addEventListener('click', function (event) {
+    const header = document.querySelector('#header');
+    const isClickInsideHeader = header.contains(event.target);
+    const isClickOnToggleBtn = headerToggleBtn.contains(event.target);
+    const isClickOnFilter = Array.from(document.querySelectorAll('.isotope-filters li')).some(filter => filter.contains(event.target));
 
+    if (!isClickInsideHeader && !isClickOnToggleBtn && !isClickOnFilter) {
+      if (header.classList.contains('header-show')) {
+        headerToggle();
+      }
+    }
+  });
+
+})();
