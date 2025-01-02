@@ -541,6 +541,8 @@ section,
 }
 
 .hero img {
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
   position: absolute;
   inset: 0;
   display: block;
