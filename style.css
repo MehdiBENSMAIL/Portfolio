@@ -1,0 +1,716 @@
+/* Basic Reset & Variables */
+:root {
+    /* Light Theme */
+    --background-color-light: #f4f4f4;
+    --text-color-light: #333;
+    --header-background-light: #fff;
+    --card-background-light: #fff;
+    --border-color-light: #ddd;
+    --accent-color-light: #007bff; /* Blue */
+    --shadow-color-light: rgba(0, 0, 0, 0.1);
+    --scroll-progress-light: #007bff;
+    --drawer-background-light: #fff;
+    --drawer-text-light: #333;
+    --drawer-border-light: #eee;
+
+    /* Dark Theme - Default values */
+    --background-color-dark: #1a1a1a;
+    --text-color-dark: #f4f4f4;
+    --header-background-dark: #2a2a2a;
+    --card-background-dark: #333;
+    --border-color-dark: #555;
+    --accent-color-dark: #17a2b8; /* Teal */
+    --shadow-color-dark: rgba(0, 0, 0, 0.3);
+     --scroll-progress-dark: #17a2b8;
+    --drawer-background-dark: #2a2a2a;
+    --drawer-text-dark: #f4f4f4;
+    --drawer-border-dark: #444;
+
+    /* Current Theme Variables */
+    --background-color: var(--background-color-light);
+    --text-color: var(--text-color-light);
+    --header-background: var(--header-background-light);
+    --card-background: var(--card-background-light);
+    --border-color: var(--border-color-light);
+    --accent-color: var(--accent-color-light);
+    --shadow-color: var(--shadow-color-light);
+     --scroll-progress: var(--scroll-progress-light);
+     --drawer-background: var(--drawer-background-light);
+     --drawer-text: var(--drawer-text-light);
+     --drawer-border: var(--drawer-border-light);
+
+    /* Transitions */
+    --theme-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    --card-transition: transform 0.3s ease, box-shadow 0.3s ease;
+    --drawer-transition: transform 0.3s ease;
+    --overlay-transition: opacity 0.3s ease, visibility 0.3s ease;
+    --card-expand-transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+body.dark-mode {
+    --background-color: var(--background-color-dark);
+    --text-color: var(--text-color-dark);
+    --header-background: var(--header-background-dark);
+    --card-background: var(--card-background-dark);
+    --border-color: var(--border-color-dark);
+    --accent-color: var(--accent-color-dark);
+    --shadow-color: var(--shadow-color-dark);
+     --scroll-progress: var(--scroll-progress-dark);
+     --drawer-background: var(--drawer-background-dark);
+     --drawer-text: var(--drawer-text-dark);
+     --drawer-border: var(--drawer-border-dark);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: var(--theme-transition);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--text-color); /* Or a darker/lighter accent */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--header-background);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 1000; /* Above content and cards */
+    transition: var(--theme-transition);
+}
+
+.header-left,
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-center {
+    flex-grow: 1;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--text-color);
+}
+
+.site-title-link {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 1rem;
+    color: var(--text-color); /* Keep site title visible in both modes */
+}
+
+.site-title-link:hover {
+     color: var(--accent-color);
+}
+
+
+/* Drawer Toggle Button */
+.drawer-toggle, .drawer-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.drawer-toggle:hover, .drawer-close:hover {
+     color: var(--accent-color);
+}
+
+/* Theme Switch */
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin: 0 0.5rem;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.theme-text {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+
+/* Scroll Progress Bar */
+#scroll-progress {
+    position: fixed;
+    top: 64px; /* Adjust if header height changes */
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background-color: var(--scroll-progress);
+    z-index: 999; /* Below header (1000), but above general content (implicitly lower than 1000) */
+    transition: width 0.1s linear;
+}
+
+/* Main Content Area */
+main {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Portfolio Overview Section (index.html) */
+.portfolio-overview h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+
+.portfolio-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.portfolio-card {
+    display: block; /* Make the whole card a link */
+    width: 100%;
+    max-width: 450px;
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: var(--card-transition);
+    color: var(--text-color); /* Ensure text color inherits */
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px); /* This will override parallax transform on hover */
+    box-shadow: 0 8px 16px var(--shadow-color);
+    text-decoration: none; /* Remove underline from link */
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    object-fit: cover;
+}
+
+.portfolio-card .card-content {
+    padding: 1.5rem;
+}
+
+.portfolio-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+     color: var(--text-color);
+}
+
+.portfolio-card p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Project Grid Section (semester pages) */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    cursor: pointer;
+    transition: var(--card-transition);
+    position: relative; /* Needed for expanded content positioning */
+    z-index: 1; /* Default z-index */
+     color: var(--text-color); /* Ensure text color inherits */
+}
+
+.project-card:hover {
+     transform: translateY(-5px); /* This will override parallax transform on hover */
+    box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px; /* Adjust height */
+    object-fit: cover;
+}
+
+.project-card .card-preview {
+     padding: 1rem;
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+     color: var(--text-color);
+}
+
+.project-card .subtitle {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 0;
+}
+
+/* Expanded Project Card Content */
+.project-card .expanded-content {
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+    /* Initially hidden */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: var(--card-expand-transition);
+}
+
+.project-card.expanded .expanded-content {
+    max-height: 100px; /* Large enough value to accommodate content */
+    opacity: 1;
+     transition: var(--card-expand-transition);
+}
+
+.project-card.expanded {
+    /* Style for the card when expanded - make it prominent */
+    position: fixed; /* Or absolute within a positioned container if needed */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Override any parallax transform */
+    width: 90%;
+    max-width: 1000px; /* Max width for expanded view */
+    max-height: 90vh; /* Max height for expanded view */
+    overflow-y: auto; /* Enable scrolling if content is too tall - CRUCIAL FOR STICKY BUTTON */
+    z-index: 2000; /* Above overlay */
+    box-shadow: 0 10px 20px var(--shadow-color);
+     background-color: var(--card-background); /* Ensure it has a background */
+}
+
+/*.project-card.expanded .card-preview {
+    /* Optional: hide preview content when expanded */
+    /* display: none; */
+/*}*/
+
+.project-card.expanded .expanded-content {
+     /* Make content visible and scrollable within the fixed container */
+     padding: 1rem; /* Add padding if needed */
+     max-height: none; /* Allow full height */
+     opacity: 1;
+     /* overflow-y: visible; /* Handled by the parent card's overflow */
+}
+
+.project-card .expanded-content h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+     color: var(--text-color);
+}
+
+.project-card .expanded-content h6 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+     color: var(--text-color);
+}
+
+.project-card .expanded-content p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Note: image in expanded-content will use the generic `img` style,
+   unless you add a specific class to them.
+   `expanded-content img` is not specific enough to override the general `img` rule. */
+
+
+/* Back to Top Button (Global - for page scroll) */
+#back-to-top {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: background-color 0.3s ease;
+}
+
+#back-to-top:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+body.dark-mode #back-to-top:hover {
+     background-color: #0f6674; /* Darker teal */
+}
+
+/* NEW: Back to Top Button (for card scroll) */
+.card-back-to-top {
+    display: none; /* Hidden by default */
+    position: sticky; /* Reste à sa position relative au conteneur de défilement */
+    bottom: 20px; /* Distance du bas de la carte */
+    right: 20px; /* Distance de la droite de la carte */
+    margin-left: auto; /* Permet de le pousser à droite si dans un flex/grid */
+    z-index: 2001; /* Au-dessus du contenu de la carte étendue (z-index 2000 pour .expanded) */
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: background-color 0.3s ease;
+    /* Important: Pour sticky de fonctionner correctement, le parent direct doit avoir un overflow-y autre que visible */
+}
+
+.card-back-to-top:hover {
+    background-color: #0056b3; /* Bleu plus foncé pour le survol */
+}
+
+body.dark-mode .card-back-to-top:hover {
+     background-color: #0f6674; /* Teinte plus foncée pour le survol en mode sombre */
+}
+
+
+/* Drawer Menu */
+.drawer-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: var(--drawer-background);
+    box-shadow: 2px 0 5px var(--shadow-color);
+    transform: translateX(-100%);
+    transition: var(--drawer-transition);
+    z-index: 1500; /* Below modal, above header */
+    padding-top: 4rem; /* Space for close button */
+    overflow-y: auto; /* Enable scrolling for long menus */
+}
+
+.drawer-menu.open {
+    transform: translateX(0);
+}
+
+.drawer-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+}
+
+.drawer-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.drawer-menu li {
+    border-bottom: 1px solid var(--drawer-border);
+}
+
+.drawer-menu a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: var(--drawer-text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.drawer-menu a:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Subtle hover */
+}
+
+body.dark-mode .drawer-menu a:hover {
+     background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Drawer Dropdown */
+.drawer-dropdown-toggle > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.drawer-dropdown-toggle > a i {
+    transition: transform 0.3s ease;
+}
+
+.drawer-dropdown-toggle.active > a i {
+    transform: rotate(180deg);
+}
+
+.drawer-dropdown {
+    list-style: none;
+    padding: 0;
+    max-height: 0; /* Initially collapsed */
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.03); /* Slightly different background */
+}
+body.dark-mode .drawer-dropdown {
+     background-color: rgba(255, 255, 255, 0.03);
+}
+
+.drawer-dropdown.open {
+    max-height: 200px; /* Sufficient height to show dropdown items */
+}
+
+.drawer-dropdown li {
+    border-bottom: none; /* Remove inner borders */
+}
+
+.drawer-dropdown a {
+    padding: 0.8rem 2.5rem; /* Indent nested items */
+    font-size: 1rem;
+}
+
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1400; /* Below drawer, above main content */
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--overlay-transition);
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Anciens styles pour svg-container, à revoir si toujours utilisés ailleurs */
+.svg-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux images de passer à la ligne si l'espace est insuffisant */
+    justify-content: center; /* Centre les images si elles ne remplissent pas la ligne */
+    gap: 20px; /* Espace entre les SVG */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.svg-container img {
+    max-width: 100%; /* S'assure que le SVG ne déborde pas de son conteneur parent */
+    height: auto; /* Maintient le ratio d'aspect */
+    border: 1px solid #ddd; /* Ajoute une petite bordure pour la distinction */
+    border-radius: 8px; /* Bords légèrement arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
+    background-color: white; /* Fond blanc pour les SVG, utile en mode sombre */
+    padding: 10px; /* Marge interne */
+}
+
+/* AJOUTS POUR LA TRACE SVG AVEC LÉGENDE */
+.svg-trace {
+    margin: 30px auto; /* Espacement au-dessus et en dessous, centrage horizontal */
+    padding: 20px;
+    border: 1px solid var(--border-color); /* Utilise la variable de bordure */
+    border-radius: 10px;
+    background-color: var(--card-background); /* Utilise la variable de fond de carte */
+    box-shadow: 0 4px 12px var(--shadow-color); /* Utilise la variable d'ombre */
+    max-width: 800px; /* Limite la largeur de la figure */
+    text-align: center; /* Centre le contenu (SVG et légende) */
+    overflow: hidden; /* Assure que le contenu ne déborde pas */
+    transition: var(--theme-transition); /* Ajoute la transition pour le mode sombre */
+}
+
+.svg-trace img { /* Cible l'image SVG spécifique dans .svg-trace */
+    display: block; /* Évite les espaces blancs supplémentaires sous l'image */
+    margin: 0 auto 15px auto; /* Centre l'image et ajoute un espacement avec la légende */
+    max-width: 100%; /* Rend l'image réactive */
+    height: auto; /* Maintient le ratio d'aspect */
+    /* Pas de bordure, ombre, padding ou background spécifique ici, car le parent .svg-trace gère déjà ça.
+       Si vous voulez une bordure spécifique à l'image SVG dans cette figure, ajoutez-la ici. */
+}
+
+.svg-trace figcaption {
+    font-size: 0.95em;
+    color: var(--text-color); /* Utilise la variable de couleur de texte */
+    font-style: italic;
+    line-height: 1.4;
+    padding: 0 10px;
+    transition: var(--theme-transition); /* Ajoute la transition pour le mode sombre */
+}
+
+/* Styles pour les titres des sous-sections (Savoirs mobilisés, Savoir-faire mis en œuvre) */
+.expanded-content h6 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--text-color); /* Utilise la variable de couleur de texte */
+    font-size: 1.1em;
+    border-bottom: 1px solid var(--border-color); /* Utilise la variable de bordure */
+    padding-bottom: 5px;
+    transition: var(--theme-transition);
+}
+
+
+/* Ajustements pour les listes dans expanded-content */
+.expanded-content ul {
+    margin-left: 20px;
+    padding-left: 0;
+    list-style-type: disc;
+}
+
+.expanded-content ul li {
+    margin-bottom: 5px;
+}
+
+
+/* Media queries pour la responsivité des SVG */
+@media (max-width: 768px) {
+    /* Anciens styles pour svg-container, à revoir si toujours utilisés ailleurs */
+    .svg-container {
+        flex-direction: column; /* Les SVG s'empilent sur petits écrans */
+        align-items: center; /* Centre les SVG empilés */
+    }
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 0.8rem 1rem;
+        flex-wrap: wrap; /* Allow items to wrap on small screens */
+        justify-content: center; /* Center items when wrapped */
+    }
+
+    .header-left, .header-right {
+        width: 100%; /* Take full width on small screens */
+        justify-content: space-between; /* Align button/link left, switch right */
+        margin-bottom: 0.5rem;
+    }
+
+     .header-left { justify-content: flex-start; }
+     .header-right { justify-content: flex-end; margin-top: 0.5rem;}
+
+
+    .header-center {
+        width: 100%;
+        text-align: center;
+        order: 1; /* Place center below left/right */
+    }
+
+     header h1 {
+        font-size: 1.2rem;
+     }
+
+    .site-title-link {
+        margin-left: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    #scroll-progress {
+         top: 88px; /* Adjust based on new header height */
+    }
+
+    main {
+        padding: 1rem 0.5rem;
+    }
+
+    .portfolio-cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio-card {
+        max-width: 95%; /* Use more width on small screens */
+    }
+
+    .project-grid {
+        gap: 1rem;
+    }
+
+     .project-card.expanded {
+        width: 95%; /* Use more width in modal on small screens */
+     }
+
+    /* Responsive pour la trace SVG */
+    .svg-trace {
+        padding: 15px; /* Réduit le padding sur mobile */
+        margin: 20px auto; /* Réduit les marges */
+    }
+}

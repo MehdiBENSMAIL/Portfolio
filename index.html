@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio MBS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- For icons -->
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <button class="drawer-toggle" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="index.html" class="site-title-link">Portfolio</a>
+        </div>
+        <div class="header-center">
+            <h1>Accueil</h1>
+        </div>
+        <div class="header-right">
+            <span class="theme-text">Light</span>
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span class="theme-text">Dark</span>
+        </div>
+    </header>
+
+    <div id="scroll-progress"></div>
+
+    <div id="drawer-menu" class="drawer-menu">
+        <button class="drawer-close" aria-label="Close menu">×</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li class="drawer-dropdown-toggle">
+                    <a href="#">Portfolio<i class="fas fa-caret-down"></i></a>
+                    <ul class="drawer-dropdown">
+                        <li><a href="semester3-4.html">Semestre 3 et 4</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="overlay"></div>
+
+    <main>
+        <section class="portfolio-overview">
+            <h2>Semestres</h2>
+            <div class="portfolio-cards-container">
+                <a href="semester3-4.html" class="portfolio-card">
+                    <img src="img/systancia.png" alt="Semester 3 Projects Illustration">
+                    <div class="card-content">
+                        <h3>Semestre 3-4</h3>
+                        <p>Compétences abordées durant le troisième et quatrième semestre</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

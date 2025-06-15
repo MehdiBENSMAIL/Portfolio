@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semestre 3</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <button class="drawer-toggle" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <a href="index.html" class="site-title-link">Portfolio</a>
+        </div>
+        <div class="header-center">
+            <h1>Semestre 3 et 4</h1>
+        </div>
+        <div class="header-right">
+            <span class="theme-text">Light</span>
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider round"></span>
+            </label>
+            <span class="theme-text">Dark</span>
+        </div>
+    </header>
+
+    <div id="scroll-progress"></div>
+
+    <div id="drawer-menu" class="drawer-menu">
+        <button class="drawer-close" aria-label="Close menu">×</button>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li class="drawer-dropdown-toggle">
+                    <a href="#">Portfolio <i class="fas fa-caret-down"></i></a>
+                    <ul class="drawer-dropdown">
+                        <li><a href="semester3-4.html">Semestre 3 et 4</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="overlay"></div>
+
+    <main>
+        <section class="project-grid">
+
+            <!-- Carte Compétence 1 -->
+            <div class="project-card">
+                <img src="img/c1.png" alt="Illustration développement d'application">
+                <div class="card-preview">
+                    <h3>Réaliser un développement d'application</h3>
+                    <p class="subtitle">Compétence 1</p>
+                </div>
+                <div class="expanded-content">
+                    <h4>Détails de la compétence :</h4>
+                    <p>Cette compétence se décompose en plusieurs apprentissages critiques (AC) que j'ai pu développer à
+                        travers mes projets :</p>
+                    <ul>
+                        <li><strong>AC 1 :</strong> Élaborer et implémenter les spécifications fonctionnelles et non
+                            fonctionnelles à partir des exigences.</li>
+                        <li><strong>AC 2 :</strong> Appliquer des principes d'accessibilité et d'ergonomie.</li>
+                        <li><strong>AC 3 :</strong> Adopter de bonnes pratiques de conception et de programmation.</li>
+                        <li><strong>AC 4 :</strong> Vérifier et valider la qualité de l'application par les tests.</li>
+                    </ul>
+
+                    <figure class="svg-trace">
+                        <!-- INLINED SVG CODE STARTS HERE -->
+
+                        <svg width="800" height="650" viewBox="0 0 800 650" aria-labelledby="svgTitle svgDesc">
+                            <title id="svgTitle">Architecture des Installateurs de Solutions Systancia</title>
+                            <desc id="svgDesc">Diagramme illustrant l'installateur principal Identity, ses composants
+                                internes, et le processus de choix entre l'installation des systèmes Identity
+                                Provisioning, Federation, ou la connexion à un IDP externe.</desc>
+
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5"
+                                    orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+                                    <!-- Couleur fixe pour la pointe de flèche -->
+                                </marker>
+                                <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000"
+                                        flood-opacity="0.3" />
+                                </filter>
+                                <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="0" refY="3.5"
+                                    orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#C00" />
+                                </marker>
+                            </defs>
+
+                            <!-- Style CSS interne pour la lisibilité -->
+                            <style>
+                                .box {
+                                    fill: #f0f8ff;
+                                    /* AliceBlue - Reste clair */
+                                    stroke: #333;
+                                    /* Reverti à la couleur fixe foncée */
+                                    stroke-width: 2;
+                                    filter: url(#shadow);
+                                }
+
+                                .main-box {
+                                    fill: #e6f7ff;
+                                    /* Light Cyan - Reste clair */
+                                    stroke: #0056b3;
+                                    /* Reverti à la couleur fixe foncée */
+                                    stroke-width: 3;
+                                    filter: url(#shadow);
+                                }
+
+                                .installer-box {
+                                    fill: #dff0d8;
+                                    /* Light Greenish Blue - Reste clair */
+                                    stroke: #3c763d;
+                                    /* Reverti à la couleur fixe foncée */
+                                    stroke-width: 2;
+                                    filter: url(#shadow);
+                                }
+
+                                .decision-box {
+                                    fill: #ffebcd;
+                                    /* BlanchedAlmond - Reste clair */
+                                    stroke: #d49a00;
+                                    /* Reverti à la couleur fixe foncée */
+                                    stroke-width: 2;
+                                    filter: url(#shadow);
+                                }
+
+                                .text {
+                                    font-family: 'Segoe UI', Arial, sans-serif;
+                                    font-size: 16px;
+                                    fill: #333;
+                                    /* Reverti à la couleur fixe foncée pour les autres textes */
+                                    text-anchor: middle;
+                                    dominant-baseline: central;
+                                }
+
+                                .small-text {
+                                    font-family: 'Segoe UI', Arial, sans-serif;
+                                    font-size: 14px;
+                                    fill: #555;
+                                    /* Reverti à la couleur fixe foncée */
+                                    text-anchor: middle;
+                                    dominant-baseline: central;
+                                }
+
+                                .legend-text {
+                                    font-family: 'Segoe UI', Arial, sans-serif;
+                                    font-size: 12px;
+                                    fill: #666;
+                                    /* Reverti à la couleur fixe foncée */
+                                    text-anchor: start;
+                                }
+
+                                .arrow {
+                                    stroke: #333;
+                                    /* Reverti à la couleur fixe foncée */
+                                    stroke-width: 2;
+                                    fill: none;
+                                    marker-end: url(#arrowhead);
+                                }
+
+                                .connector {
+                                    stroke: #666;
+                                    /* Reverti à la couleur fixe foncée */
+                                    stroke-width: 1;
+                                    stroke-dasharray: 4 2;
+                                }
+                            </style>
+
+                            <!-- Titre général du diagramme -->
+                            <!-- C'est ICI que le style est ajouté pour s'adapter au thème -->
+                            <text x="400" y="30" class="text"
+                                style="font-size: 24px; font-weight: bold; fill: var(--text-color);">Architecture des
+                                Installateurs Systancia</text>
+
+                            <!-- Légende -->
+                            <g transform="translate(60, 590)">
+                                <rect x="0" y="0" width="15" height="15" fill="#f0f8ff" stroke="#333"
+                                    stroke-width="1" />
+                                <text x="20" y="7.5" class="legend-text">Composant principal</text>
+                                <rect x="0" y="20" width="15" height="15" fill="#dff0d8" stroke="#3c763d"
+                                    stroke-width="1" />
+                                <text x="20" y="27.5" class="legend-text">Installateur secondaire</text>
+                                <rect x="0" y="40" width="15" height="15" fill="#ffebcd" stroke="#d49a00"
+                                    stroke-width="1" />
+                                <text x="20" y="47.5" class="legend-text">Point de décision</text>
+                                <line x1="0" y1="67.5" x2="15" y2="67.5" class="arrow" marker-end="url(#arrowhead)" />
+                                <text x="20" y="67.5" class="legend-text">Flux / Relation</text>
+                            </g>
+
+                            <!-- Installateur Principal : Identity -->
+                            <rect x="100" y="80" width="600" height="200" rx="10" ry="10" class="main-box" />
+                            <text x="400" y="100" class="text" style="font-size: 20px; font-weight: bold;">Installateur
+                                Principal : Identity</text>
+
+                            <!-- Contenus de l'installateur Identity -->
+                            <rect x="140" y="150" width="150" height="60" rx="5" ry="5" class="box" />
+                            <text x="215" y="180" class="small-text">Sources de</text>
+                            <text x="215" y="195" class="small-text">l'application</text>
+
+                            <rect x="320" y="150" width="150" height="60" rx="5" ry="5" class="box" />
+                            <text x="395" y="180" class="small-text">Scripts</text>
+
+                            <rect x="500" y="150" width="150" height="60" rx="5" ry="5" class="box" />
+                            <text x="575" y="180" class="small-text">Ressources</text>
+                            <text x="575" y="195" class="small-text">(images, license.txt)</text>
+
+                            <!-- Flèches indiquant la composition interne -->
+                            <line x1="400" y1="115" x2="215" y2="150" class="connector" />
+                            <line x1="400" y1="115" x2="395" y2="150" class="connector" />
+                            <line x1="400" y1="115" x2="575" y2="150" class="connector" />
+
+                            <!-- Flux de l'installation / configuration -->
+                            <line x1="400" y1="280" x2="400" y2="310" class="arrow" />
+                            <text x="400" y="295" class="small-text" style="text-anchor: middle;">Lance la
+                                configuration</text>
+
+                            <!-- Point de décision : Choix de l'installation et fournisseur d'identité -->
+                            <rect x="250" y="320" width="300" height="70" rx="10" ry="10" class="decision-box" />
+                            <text x="400" y="340" class="text">Choix de l'installation et</text>
+                            <text x="400" y="360" class="text">du fournisseur d'identité</text>
+
+                            <!-- Options de choix (les 3 installateurs / IDP) -->
+                            <!-- Installer Identity Provisioning -->
+                            <line x1="300" y1="390" x2="200" y2="430" class="arrow" />
+                            <rect x="100" y="430" width="200" height="100" rx="5" ry="5" class="installer-box" />
+                            <text x="200" y="460" class="text">Installateur</text>
+                            <text x="200" y="475" class="text">Identity Provisioning</text>
+                            <text x="200" y="500" class="small-text">(Sources, Scripts, Ressources)</text>
+
+                            <!-- IDP Externe -->
+                            <line x1="400" y1="390" x2="400" y2="430" class="arrow" />
+                            <rect x="325" y="430" width="150" height="100" rx="5" ry="5" class="box" />
+                            <text x="400" y="470" class="text">IDP Externe</text>
+
+                            <!-- Installer Federation -->
+                            <line x1="500" y1="390" x2="600" y2="430" class="arrow" />
+                            <rect x="500" y="430" width="200" height="100" rx="5" ry="5" class="installer-box" />
+                            <text x="600" y="460" class="text">Installateur</text>
+                            <text x="600" y="475" class="text">Federation</text>
+                            <text x="600" y="500" class="small-text">(Sources, Scripts, Ressources)</text>
+
+                        </svg>
+
+
+                        <!-- INLINED SVG CODE ENDS HERE -->
+                        <figcaption>Trace 1.1 : Architecture simplifiée des installateurs Inno Setup pour les solutions
+                            liées à Systancia Identity.</figcaption>
+                    </figure>
+
+                    <h6>Présentation</h6>
+                    <p>Cette trace illustre l'architecture des installeurs développés avec Inno Setup, leurs relations
+                        et la manière dont ils sont organisés. Les installateurs de Federation et de Identity
+                        Provisionning sont indépendants et les désinstallateurs également.</p>
+                    <h6>Savoirs mobilisés :</h6>
+                    <ul>
+                        <li>La capacité à analyser des systèmes existants et à traduire les besoins des clients en
+                            spécifications fonctionnelles et non fonctionnelles (telles que la modularité, la
+                            robustesse, l'ergonomie, et l'intégration continue)</li>
+                        <li>La conception d'interfaces utilisateur (UI) qui respectent les principes d'ergonomie et de
+                            clarté est essentielle pour améliorer l'expérience utilisateur et l'efficacité des
+                            applications, notamment par l'intégration de champs préremplis et de listes dynamiques.</li>
+                        <li>L'adoption de bonnes pratiques, incluant la modularité, la gestion rigoureuse des erreurs,
+                            des divers cas d'usages (architecture, installations et configurations actuelles,
+                            composants, etc.)
+                            la journalisation exhaustive et la sécurisation des données sensibles.
+                        </li>
+                        <li>La vérification et la validation par des tests (fonctionnels, d'acceptation, de prérequis,
+                            de données) sont des étapes indispensables pour garantir la qualité, la conformité et la
+                            sécurité d'une application avant son déploiement.</li>
+                    </ul>
+
+                    <h6>Savoir-faire mis en œuvre :</h6>
+                    <ul>
+                        <li>J'ai mené une analyse approfondie des logiciels existants (Identity,
+                            Federation, Identity Provisioning) pour comprendre leur architecture et leur fonctionnement,
+                            ce qui m'a permis d'identifier les exigences de refonte. J'ai ensuite formalisé les besoins,
+                            en tenant compte des exigences initiales (alternative gratuite, open source,
+                            riche en fonctionnalités, intégrable continuellement, éxécutable silencieusement) et en
+                            gérant l'évolution de ces
+                            besoins (passage d'un installateur simple à une version permettant la sélection individuelle
+                            des produits et la récupération dynamique d'informations via des requêtes vers l'Identity
+                            Provider (IdP)). J'ai implémenté un installateur qui répond à ces spécifications, en étant
+                            modulaire et robuste.</li>
+                        <li>J'ai conçu des interfaces claires et concises pour l'installateur afin d'optimiser son
+                            ergonomie. J'ai intégré des fonctionnalités telles que des champs préremplis et des listes
+                            dynamiquement alimentées (par exemple, avec les certificats disponibles et les magasins de
+                            certificats de la machine courante), facilitant ainsi l'interaction et réduisant les erreurs
+                            pour l'utilisateur
+                            final.</li>
+                        <li>J'ai développé l'installateur en appliquant des principes de conception modulaires et
+                            robustes, en utilisant notamment PowerShell pour la logique sous-jacente. J'ai mis en œuvre
+                            des mécanismes de gestion des erreurs (blocs <code>try-catch</code> et utilisation de codes
+                            de retour) et
+                            une journalisation complète du processus pour assurer sa fiabilité. J'ai également veillé à
+                            la sécurité des données, en assurant que les mots de passe soient stockés correctement et ne
+                            soient jamais affichés en clair. J'ai étudié les architectures des API (Application
+                            Programming Interface) REST (Representational State Transfer) et leur documentation grâce à
+                            l'utilisation de Swagger.</li>
+                        <li>J'ai mis en œuvre une stratégie de tests rigoureuse pour valider la qualité de
+                            l'installateur. J'ai effectué de nombreux tests de prérequis (vérification de
+                            l'environnement .NET (Dot NET), de l'architecture, du module de réécriture d'URL (Uniform
+                            Resource Locator) d'IIS (Internet Information Services)) et des tests sur les données (tests
+                            des comptes de services via des requêtes vers l'AD (Active Directory), tests de connexion
+                            aux bases de données, etc.) pour renforcer la sécurité.</li>
+                        <ul>Pour connaître le fonctionnement et l'architectures des diverses applications, j'ai d'abord
+                            commencé par réaliser des tests d'acceptations, cela m'a permis d'apprendre à comprendre les
+                            enjeux et l'importance de la validation logicielle au sein d'une équipe de développement.
+                            J'ai appris à me servir de divers outils pour réaliser mes tests tel que l'utilisation de
+                            l'observateur d'évènements, de la console et l'analyse réseau du navigateur ou encore des
+                            logs générés par Hangfire
+                        </ul>
+                    </ul>
+                    <!-- NOUVEAU BOUTON -->
+                    <button class="card-back-to-top" aria-label="Retour en haut de la carte">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Répétez le même ajout pour chaque autre Carte Compétence -->
+            <!-- Carte Compétence 2 -->
+            <div class="project-card">
+                <img src="img/c2.png" alt="Illustration optimisation d'applications">
+                <div class="card-preview">
+                    <h3>Optimiser des applications</h3>
+                    <p class="subtitle">Compétence 2</p>
+                </div>
+                <div class="expanded-content">
+                    <h4>Détails de la compétence :</h4>
+                    <p>Cette compétence se décompose en plusieurs apprentissages critiques (AC) que j'ai pu développer à
+                        travers mes projets :</p>
+                    <ul>
+                        <li><strong>AC 1 :</strong> Choisir des structures de données complexes adaptées au problème.
+                        </li>
+                        <li><strong>AC 2 :</strong> Utiliser des techniques algorithmiques adaptées au problème.</li>
+                        <li><strong>AC 3 :</strong> Comprendre les enjeux et moyens de sécurisation des données et du
+                            code.</li>
+                        <li><strong>AC 4 :</strong> Évaluer l'impact environnemental et sociétal des solutions
+                            proposées.</li>
+                    </ul>
+
+                    <figure class="svg-trace">
+                        <img src="img/c1.png" alt="Capture d'écran de code Python illustrant l'optimisation par exécution à plusieurs fils d'exécution">
+                        <figcaption>Trace 2.1 : Extrait de code Python illustrant l'utilisation de l'exécution à plusieurs fils d'exécution (multithreading) pour la génération de données optimisée.</figcaption>
+                    </figure>
+                    <p>Cette trace illustre la manière dont l'exécution à plusieurs fils a été employée dans le script python.</p>
+
+                    <h6>Savoirs mobilisés :</h6>
+                    <ul>
+                        <li>L'efficacité des traitements des données complexes dépend du choix judicieux de structures
+                            de données. L'utilisation de bibliothèques comme Pandas et ses Dataframes
+                            est une approche efficace pour organiser et manipuler de grands ensembles de données.</li>
+                        <li>L'optimisation des performances des applications, notamment pour les traitements à forte
+                            intensité de calcul, repose sur l'emploi de techniques telles que
+                            l'exécution à plusieurs fils pour la parallélisation des
+                            opérations.</li>
+                        <li>La sécurisation des données et du code est un enjeu majeur du développement logiciel,
+                            impliquant la protection des informations sensibles (par exemple, les mots de passe) et la
+                            mise en place de mesures préventives et de tests pour identifier les vulnérabilités.</li>
+                        <li>AC 4 non abordée.</li>
+                    </ul>
+
+                    <h6>Savoir-faire mis en œuvre :</h6>
+                    <ul>
+                        <li>J'ai choisi et utilisé les Dataframes de la bibliothèque Pandas dans un
+                            programme Python car largement documenté, fiable et simple d'utilisation. Cette structure m'a permis d'organiser et de manipuler efficacement des
+                            jeux de données d'utilisateurs générés avec des attributs complexes et hétérogènes (rôles,
+                            période d'embauche, hiérarchie, organisations, métiers, etc.), avant de les exporter dans un
+                            format CSV (Comma Separated Values) pour une utilisation ultérieure avec le moteur de provisionnement.</li>
+                        <li>J'ai optimisé un programme Python dédié à la génération d'utilisateurs en y intégrant
+                            l'exécution à plusieurs fils d'exécution (multithreading). Cette technique m'a permis
+                            d'améliorer considérablement les performances, rendant possible la génération de centaines
+                            de milliers, voire de millions d'utilisateurs avec une grande efficacité.</li>
+                        <li>J'ai mis en œuvre des mesures pour garantir la sécurisation des données en veillant à ce que
+                            les mots de passe soient stockés de manière appropriée et ne soient jamais affichés en clair
+                            par le programme. J'ai également renforcé la sécurité des installateurs par l'exécution de
+                            nombreux tests de prérequis (environnements .NET (Dot NET), architectures, modules de
+                            réécriture d'URL (Uniform Resource Locator) d'IIS (Internet Information Services)) et des
+                            tests sur les données, tels que la vérification des comptes de services via des requêtes
+                            vers l'AD (Active Directory) et la validation des connexions aux bases de données.</li>
+                        <li>*Savoir-faire non mis en oeuvre*</li>
+                    </ul>
+                    <!-- NOUVEAU BOUTON -->
+                    <button class="card-back-to-top" aria-label="Retour en haut de la carte">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Carte Compétence 3 -->
+            <div class="project-card">
+                <img src="img/c3.png"
+                    alt="Illustration administration de systèmes informatiques communicants complexes">
+                <div class="card-preview">
+                    <h3>Administrer des systèmes informatiques communicants complexes</h3>
+                    <p class="subtitle">Compétence 3</p>
+                </div>
+                <div class="expanded-content">
+                    <h4>Détails de la compétence :</h4>
+                    <p>Cette compétence se décompose en plusieurs apprentissages critiques (AC) que j'ai pu développer à
+                        travers mes projets :</p>
+                    <ul>
+                        <li><strong>AC 1 :</strong> Développer des applications communicantes.</li>
+                        <li><strong>AC 2 :</strong> Utiliser la virtualisation.</li>
+                        <li><strong>AC 3 :</strong> Sécuriser les services et données d'un système.</li>
+                    </ul>
+
+                    <h6>Savoirs mobilisés :</h6>
+                    <ul>
+                        <li>Le développement d'applications communicantes exige la compréhension des protocoles
+                            d'échange de données (comme le format JSON (JavaScript Object Notation)) et la capacité à
+                            interagir avec des services externes via des API (Application Programming Interface) pour
+                            des flux d'information complexes.</li>
+                        <li>La virtualisation est une technologie fondamentale pour la gestion flexible des
+                            infrastructures informatiques, permettant le déploiement et l'administration de machines
+                            virtuelles (VMs) pour des environnements de développement, de test et de production.</li>
+                        <li>La sécurisation des systèmes complexes implique une connaissance approfondie des
+                            environnements (AD (Active Directory), IIS (Internet Information Services)), des mécanismes
+                            de gestion des certificats, du réseau, et de l'analyse des journaux (logs) pour le
+                            diagnostic et la détection d'incidents.</li>
+                    </ul>
+
+                    <h6>Savoir-faire mis en œuvre :</h6>
+                    <ul>
+                        <li>J'ai développé une fonctionnalité permettant à l'installateur d'envoyer des requêtes à un
+                            Identity Provider (IdP) pour récupérer dynamiquement des informations essentielles, telles
+                            que des jetons et des points de terminaison, au format JSON (JavaScript Object Notation).
+                            Cela démontre ma capacité à créer des applications interopérables et communicantes. J'ai
+                            également étudié en profondeur les architectures des API (Application Programming Interface)
+                            REST (Representational State Transfer) et leur documentation via Swagger.</li>
+                        <li>J'ai acquis une bonne familiarisation avec l'utilisation des machines virtuelles (VMs) sous
+                            Windows Server, un environnement que j'ai utilisé pour le développement, les tests et la
+                            validation de l'installateur et des solutions logicielles, démontrant ainsi ma capacité à
+                            travailler dans des environnements virtualisés.</li>
+                        <li>J'ai acquis une familiarisation approfondie avec divers environnements Microsoft (AD (Active
+                            Directory), Azure, Teams, IIS (Internet Information Services), PowerShell, certificats,
+                            domaines, réseau, observateur d'événements). J'ai également appris à analyser des journaux
+                            (logs) Hangfire ou des journaux réseau avancés dans la console pour diagnostiquer et
+                            résoudre des problèmes. De plus, j'ai rédigé un article Confluence, documentant la création
+                            et l'utilisation de certificats auto-signés avec IIS (Internet Information Services), ce qui
+                            témoigne de ma capacité à mettre en œuvre et à documenter des pratiques de sécurisation.
+                        </li>
+                    </ul>
+                    <!-- NOUVEAU BOUTON -->
+                    <button class="card-back-to-top" aria-label="Retour en haut de la carte">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Carte Compétence 4 -->
+            <div class="project-card">
+                <img src="img/c4.png" alt="Illustration gestion des données de l'information">
+                <div class="card-preview">
+                    <h3>Gérer des données de l'information</h3>
+                    <p class="subtitle">Compétence 4</p>
+                </div>
+                <div class="expanded-content">
+                    <h4>Détails de la compétence :</h4>
+                    <p>Cette compétence se décompose en plusieurs apprentissages critiques (AC) que j'ai pu développer à
+                        travers mes projets :</p>
+                    <ul>
+                        <li><strong>AC 1 :</strong> Optimiser les modèles de données de l'entreprise.</li>
+                        <li><strong>AC 2 :</strong> Assurer la confidentialité des données (intégrité et sécurité).</li>
+                        <li><strong>AC 3 :</strong> Organiser la restitution de données à travers la programmation et la
+                            visualisation.</li>
+                        <li><strong>AC 4 :</strong> Manipuler des données hétérogènes.</li>
+                    </ul>
+                    <h5>Les projets :</h5>
+                    <p>Au sein de l'équipe de Systancia, j'ai été en charge de la refonte de l'outil d'installation des
+                        solutions Identity, Federation et Identity Provisioning, passant d'InstallShield à Inno Setup.
+                        Ce projet a exigé de ma part une compréhension approfondie des logiciels existants, la
+                        formalisation des besoins clients et le développement d'un installateur modulaire, robuste,
+                        ergonomique et intégrable dans une chaîne d'intégration continue (CI). En parallèle, j'ai
+                        développé des outils d'automatisation des tests, comme un générateur de données multi-threadé en
+                        Python.</p>
+
+                    <h6>Savoirs mobilisés :</h6>
+                    <ul>
+                        <li>*Aucune information explicite n'est fournie concernant l'optimisation des modèles de données
+                            de l'entreprise.*</li>
+                        <li>La garantie de la confidentialité, de l'intégrité et de la sécurité des données est un
+                            pilier de la gestion de l'information, exigeant des pratiques de stockage sécurisé des
+                            informations sensibles et des validations rigoureuses de leur exactitude.</li>
+                        <li>*Aucune information explicite n'est fournie concernant l'organisation de la restitution de
+                            données à travers la programmation et la visualisation.*</li>
+                        <li>La manipulation et l'intégration de données provenant de sources et de formats divers (par
+                            exemple, des données générées, des données de systèmes externes, des fichiers CSV (Comma
+                            Separated Values)) sont des compétences essentielles pour la préparation et l'analyse de
+                            jeux de données complexes.</li>
+                    </ul>
+
+                    <h6>Savoir-faire mis en œuvre :</h6>
+                    <ul>
+                        <li>*Aucune information explicite n'est fournie concernant l'optimisation des modèles de données
+                            de l'entreprise.*</li>
+                        <li>J'ai mis en place des mesures garantissant la confidentialité des données en assurant que
+                            les mots de passe soient stockés de manière sécurisée et ne soient jamais affichés en clair
+                            par l'installateur. J'ai également réalisé des tests sur les données, comme la vérification
+                            des comptes de services via des requêtes vers l'AD (Active Directory) et les tests de
+                            connexion aux bases de données, afin de valider leur intégrité et leur sécurité.</li>
+                        <li>*Aucune information explicite n'est fournie concernant l'organisation de la restitution de
+                            données à travers la programmation et la visualisation.*</li>
+                        <li>J'ai conçu et développé un programme en Python, utilisant la bibliothèque Faker, pour
+                            générer un grand nombre d'utilisateurs avec des attributs variés et cohérents (rôles,
+                            période d'embauche, hiérarchie, organisations, métiers). J'ai ensuite manipulé ces données
+                            hétérogènes en les structurant dans des cadres de données (DataFrame) Pandas et en les
+                            exportant dans des fichiers CSV (Comma Separated Values), pour être utilisés par le moteur
+                            de provisionnement, démontrant ma capacité à préparer et à transformer des données pour des
+                            systèmes tiers.</li>
+                    </ul>
+                    <!-- NOUVEAU BOUTON -->
+                    <button class="card-back-to-top" aria-label="Retour en haut de la carte">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Carte Compétence 5 -->
+            <div class="project-card">
+                <img src="img/c5.png" alt="Illustration conduite de projet">
+                <div class="card-preview">
+                    <h3>Conduire un projet</h3>
+                    <p class="subtitle">Compétence 5</p>
+                </div>
+                <div class="expanded-content">
+                    <h4>Détails de la compétence :</h4>
+                    <p>Cette compétence se décompose en plusieurs apprentissages critiques (AC) que j'ai pu développer à
+                        travers mes projets :</p>
+                    <ul>
+                        <li><strong>AC 2 :</strong> Formaliser les besoins du client et de l'utilisateur.</li>
+                        <li><strong>AC 3 :</strong> Identifier les critères de faisabilité d'un projet informatique.
+                        </li>
+                        <li><strong>AC 4 :</strong> Définir et mettre en œuvre une démarche de suivi de projet.</li>
+                    </ul>
+                    <h5>Les projets :</h5>
+                    <p>Au sein de l'équipe de Systancia, j'ai été en charge de la refonte de l'outil d'installation des
+                        solutions Identity, Federation et Identity Provisioning, passant d'InstallShield à Inno Setup.
+                        Ce projet a exigé de ma part une compréhension approfondie des logiciels existants, la
+                        formalisation des besoins clients et le développement d'un installateur modulaire, robuste,
+                        ergonomique et intégrable dans une chaîne d'intégration continue (CI). En parallèle, j'ai
+                        développé des outils d'automatisation des tests, comme un générateur de données multi-threadé en
+                        Python.</p>
+
+                    <h6>Savoirs mobilisés :</h6>
+                    <ul>
+                        <li>La formalisation des besoins des clients et des utilisateurs est une étape cruciale en
+                            gestion de projet, nécessitant une écoute active pour capter les exigences initiales et une
+                            adaptabilité pour gérer les évolutions.</li>
+                        <li>*Aucune information explicite n'est fournie concernant l'identification des critères de
+                            faisabilité d'un projet informatique.*</li>
+                        <li>Un suivi de projet efficace implique l'utilisation d'outils de gestion des tâches et des
+                            incidents, une communication transparente sur l'avancement et la capacité à estimer les
+                            charges de travail.</li>
+                    </ul>
+
+                    <h6>Savoir-faire mis en œuvre :</h6>
+                    <ul>
+                        <li>J'ai formalisé les besoins du client pour la refonte de l'outil d'installation, en prenant
+                            en compte leurs exigences de départ (par exemple, choix d'une alternative gratuite et open
+                            source, intégration continue) et en gérant les évolutions de ces exigences (passage d'un
+                            installateur simple à un installateur modulaire avec sélection individuelle des produits).
+                        </li>
+                        <li>*Aucune information explicite n'est fournie concernant l'identification des critères de
+                            faisabilité d'un projet informatique.*</li>
+                        <li>J'ai utilisé le système de tickets d'Azure DevOps (incluant la gestion des bogues (bugs),
+                            des récits utilisateurs (user story) et des fonctionnalités (features)) pour le suivi du
+                            projet, ce qui m'a permis de développer ma concision et ma précision dans la rédaction des
+                            tickets. J'ai également participé activement aux stand-ups quotidiens pour estimer les
+                            charges de travail et rendre compte de mon activité, contribuant ainsi à une démarche de
+                            suivi de projet structurée.</li>
+                    </ul>
+                    <!-- NOUVEAU BOUTON -->
+                    <button class="card-back-to-top" aria-label="Retour en haut de la carte">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Carte Compétence 6 -->
+            <div class="project-card">
+                <img src="img/c6.png" alt="Illustration collaboration au sein d'une équipe informatique">
+                <div class="card-preview">
+                    <h3>Collaborer au sein d'une équipe informatique</h3>
+                    <p class="subtitle">Compétence 6</p>
+                </div>
+                <div class="expanded-content">
+                    <h4>Détails de la compétence :</h4>
+                    <p>Cette compétence se décompose en plusieurs apprentissages critiques (AC) que j'ai pu développer à
+                        travers mes projets :</p>
+                    <ul>
+                        <li><strong>AC 2 :</strong> Appliquer une démarche pour intégrer une équipe informatique au sein
+                            d'une organisation.</li>
+                        <li><strong>AC 3 :</strong> Mobiliser les compétences interpersonnelles pour intégrer une équipe
+                            informatique.</li>
+                        <li><strong>AC 4 :</strong> Rendre compte de son activité professionnelle.</li>
+                    </ul>
+                    <h5>Les projets :</h5>
+                    <p>Au sein de l'équipe de Systancia, j'ai été en charge de la refonte de l'outil d'installation des
+                        solutions Identity, Federation et Identity Provisioning, passant d'InstallShield à Inno Setup.
+                        Ce projet a exigé de ma part une compréhension approfondie des logiciels existants, la
+                        formalisation des besoins clients et le développement d'un installateur modulaire, robuste,
+                        ergonomique et intégrable dans une chaîne d'intégration continue (CI). En parallèle, j'ai
+                        développé des outils d'automatisation des tests, comme un générateur de données multi-threadé en
+                        Python.</p>
+
+                    <h6>Savoirs mobilisés :</h6>
+                    <ul>
+                        <li>L'intégration réussie au sein d'une équipe informatique repose sur la maîtrise des outils
+                            collaboratifs et des processus de développement partagés, essentiels pour une contribution
+                            efficace.</li>
+                        <li>Une collaboration efficace au sein d'une équipe est facilitée par des compétences
+                            interpersonnelles solides, telles que la communication proactive, la capacité à transmettre
+                            des connaissances et à travailler en synergie.</li>
+                        <li>La reddition de compte est essentielle pour la transparence et le suivi des projets au sein
+                            d'une équipe. Elle implique une communication claire, concise et régulière sur l'avancement
+                            des tâches et les résultats.</li>
+                    </ul>
+
+                    <h6>Savoir-faire mis en œuvre :</h6>
+                    <ul>
+                        <li>J'ai appris et appliqué l'utilisation du système de demandes de fusion (pull request), un
+                            mécanisme clé de collaboration sur le code, ce qui m'a permis de m'intégrer et de contribuer
+                            efficacement aux processus de développement de l'équipe.</li>
+                        <li>J'ai activement communiqué avec les membres de mon équipe, notamment en transmettant les
+                            connaissances techniques acquises lors de mes périodes de tests à un collègue, démontrant ma
+                            capacité à partager l'information et à favoriser la montée en compétence collective.</li>
+                        <li>J'ai régulièrement rendu compte de mon activité professionnelle lors des stand-ups
+                            quotidiens, incluant l'estimation des charges de travail. J'ai également contribué à la
+                            documentation interne en rédigeant un article Confluence destiné aux équipes, détaillant la
+                            création et l'utilisation de certificats auto-signés avec IIS (Internet Information
+                            Services), ce qui démontre ma capacité à documenter et à partager mes travaux. Ma capacité à
+                            être concis et précis dans la rédaction des tickets Azure DevOps (bogues (bugs), récits
+                            utilisateurs (user story), fonctionnalités (features)) a également amélioré la compréhension
+                            mutuelle au sein de l'équipe.</li>
+                    </ul>
+                    <!-- NOUVEAU BOUTON -->
+                    <button class="card-back-to-top" aria-label="Retour en haut de la carte">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Back to Top Button (Same as index.html) -->
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
