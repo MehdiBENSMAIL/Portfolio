@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semestre 3</title>
+    <title>Semestre 3 et 4</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -177,9 +177,9 @@
                             </style>
 
                             <!-- Titre général du diagramme -->
-                            <!-- C'est ICI que le style est ajouté pour s'adapter au thème -->
+                            <!-- CHANGÉ : Maintenant en noir fixe (#333) pour être toujours lisible sur fond blanc -->
                             <text x="400" y="30" class="text"
-                                style="font-size: 24px; font-weight: bold; fill: var(--text-color);">Architecture des
+                                style="font-size: 24px; font-weight: bold; fill: #333;">Architecture des
                                 Installateurs Systancia</text>
 
                             <!-- Légende -->
@@ -232,10 +232,10 @@
                             <!-- Options de choix (les 3 installateurs / IDP) -->
                             <!-- Installer Identity Provisioning -->
                             <line x1="300" y1="390" x2="200" y2="430" class="arrow" />
-                            <rect x="100" y="430" width="200" height="100" rx="5" ry="5" class="installer-box" />
-                            <text x="200" y="460" class="text">Installateur</text>
-                            <text x="200" y="475" class="text">Identity Provisioning</text>
-                            <text x="200" y="500" class="small-text">(Sources, Scripts, Ressources)</text>
+                            <text x="275" y="275" class="small-text" transform="rotate(-30 275 275)">Installer
+                                Federation</text>
+                            <rect x="100" y="300" width="300" height="70" rx="10" ry="10" class="main-box" />
+                            <text x="250" y="335" class="text">Installateur Federation</text>
 
                             <!-- IDP Externe -->
                             <line x1="400" y1="390" x2="400" y2="430" class="arrow" />
@@ -350,10 +350,14 @@
                     </ul>
 
                     <figure class="svg-trace">
-                        <img src="img/c1.png" alt="Capture d'écran de code Python illustrant l'optimisation par exécution à plusieurs fils d'exécution">
-                        <figcaption>Trace 2.1 : Extrait de code Python illustrant l'utilisation de l'exécution à plusieurs fils d'exécution (multithreading) pour la génération de données optimisée.</figcaption>
+                        <img src="img/c1.png"
+                            alt="Capture d'écran de code Python illustrant l'optimisation par exécution à plusieurs fils d'exécution">
+                        <figcaption>Trace 2.1 : Extrait de code Python illustrant l'utilisation de l'exécution à
+                            plusieurs fils d'exécution (multithreading) pour la génération de données optimisée.
+                        </figcaption>
                     </figure>
-                    <p>Cette trace illustre la manière dont l'exécution à plusieurs fils a été employée dans le script python.</p>
+                    <p>Cette trace illustre la manière dont l'exécution à plusieurs fils a été employée dans le script
+                        python.</p>
 
                     <h6>Savoirs mobilisés :</h6>
                     <ul>
@@ -373,10 +377,12 @@
                     <h6>Savoir-faire mis en œuvre :</h6>
                     <ul>
                         <li>J'ai choisi et utilisé les Dataframes de la bibliothèque Pandas dans un
-                            programme Python car largement documenté, fiable et simple d'utilisation. Cette structure m'a permis d'organiser et de manipuler efficacement des
+                            programme Python car largement documenté, fiable et simple d'utilisation. Cette structure
+                            m'a permis d'organiser et de manipuler efficacement des
                             jeux de données d'utilisateurs générés avec des attributs complexes et hétérogènes (rôles,
                             période d'embauche, hiérarchie, organisations, métiers, etc.), avant de les exporter dans un
-                            format CSV (Comma Separated Values) pour une utilisation ultérieure avec le moteur de provisionnement.</li>
+                            format CSV (Comma Separated Values) pour une utilisation ultérieure avec le moteur de
+                            provisionnement.</li>
                         <li>J'ai optimisé un programme Python dédié à la génération d'utilisateurs en y intégrant
                             l'exécution à plusieurs fils d'exécution (multithreading). Cette technique m'a permis
                             d'améliorer considérablement les performances, rendant possible la génération de centaines
@@ -414,16 +420,185 @@
                         <li><strong>AC 2 :</strong> Utiliser la virtualisation.</li>
                         <li><strong>AC 3 :</strong> Sécuriser les services et données d'un système.</li>
                     </ul>
+                    <figure class="svg-trace">
+                        <svg width="800" height="700" viewBox="0 0 800 700" aria-labelledby="svgTitle svgDesc">
+                            <title id="svgTitle">Flux de Déploiement et d'Intégration d'Identity</title>
+                            <desc id="svgDesc">Diagramme illustrant comment l'installateur Identity gère le déploiement
+                                de Federation ou la configuration avec un IdP externe via des requêtes et du parsing
+                                JSON.</desc>
 
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" height="7" refX="0" refY="3.5"
+                                    orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+                                </marker>
+                                <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000"
+                                        flood-opacity="0.3" />
+                                </filter>
+                            </defs>
+
+                            <!-- Style CSS interne pour la lisibilité (couleurs fixes pour le diagramme) -->
+                            <style>
+                                .box {
+                                    fill: #f0f8ff;
+                                    /* AliceBlue */
+                                    stroke: #333;
+                                    stroke-width: 2;
+                                    filter: url(#shadow);
+                                }
+
+                                .main-box {
+                                    fill: #e6f7ff;
+                                    /* Light Cyan */
+                                    stroke: #0056b3;
+                                    stroke-width: 3;
+                                    filter: url(#shadow);
+                                }
+
+                                .process-box {
+                                    /* Pour les étapes du flux */
+                                    fill: #fff8dc;
+                                    /* Cornsilk */
+                                    stroke: #d8b400;
+                                    stroke-width: 2;
+                                    filter: url(#shadow);
+                                }
+
+                                .decision-box {
+                                    fill: #ffebcd;
+                                    /* BlanchedAlmond */
+                                    stroke: #d49a00;
+                                    stroke-width: 2;
+                                    filter: url(#shadow);
+                                }
+
+                                .text {
+                                    font-family: 'Segoe UI', Arial, sans-serif;
+                                    font-size: 16px;
+                                    fill: #333;
+                                    /* Couleur fixe pour le texte interne du diagramme */
+                                    text-anchor: middle;
+                                    dominant-baseline: central;
+                                }
+
+                                .small-text {
+                                    font-family: 'Segoe UI', Arial, sans-serif;
+                                    font-size: 14px;
+                                    fill: #555;
+                                    /* Couleur fixe pour le petit texte interne */
+                                    text-anchor: middle;
+                                    dominant-baseline: central;
+                                }
+
+                                .legend-text {
+                                    font-family: 'Segoe UI', Arial, sans-serif;
+                                    font-size: 12px;
+                                    fill: #666;
+                                    /* Couleur fixe pour le texte de légende */
+                                    text-anchor: start;
+                                }
+
+                                .arrow {
+                                    stroke: #333;
+                                    /* Couleur fixe pour les flèches */
+                                    stroke-width: 2;
+                                    fill: none;
+                                    marker-end: url(#arrowhead);
+                                }
+
+                                .connector {
+                                    stroke: #666;
+                                    /* Couleur fixe pour les connecteurs */
+                                    stroke-width: 1;
+                                    stroke-dasharray: 4 2;
+                                }
+                            </style>
+
+                            <!-- Titre général du diagramme (s'adapte au thème) -->
+                            <!-- CHANGÉ : Maintenant en noir fixe (#333) pour être toujours lisible sur fond blanc -->
+                            <text x="400" y="30" class="text"
+                                style="font-size: 24px; font-weight: bold; fill: #333;">Flux de Déploiement
+                                et d'Intégration d'Identity</text>
+
+                            <!-- Légende -->
+                            <g transform="translate(60, 600)">
+                                <rect x="0" y="0" width="15" height="15" fill="#e6f7ff" stroke="#0056b3"
+                                    stroke-width="1" />
+                                <text x="20" y="7.5" class="legend-text">Installateur Principal</text>
+                                <rect x="0" y="20" width="15" height="15" fill="#ffebcd" stroke="#d49a00"
+                                    stroke-width="1" />
+                                <text x="20" y="27.5" class="legend-text">Point de Décision</text>
+                                <rect x="0" y="40" width="15" height="15" fill="#fff8dc" stroke="#d8b400"
+                                    stroke-width="1" />
+                                <text x="20" y="47.5" class="legend-text">Étape du Processus</text>
+                                <rect x="0" y="60" width="15" height="15" fill="#f0f8ff" stroke="#333"
+                                    stroke-width="1" />
+                                <text x="20" y="67.5" class="legend-text">Composant Externe/Résultat</text>
+                            </g>
+
+
+                            <!-- Installateur Principal : Identity -->
+                            <rect x="250" y="80" width="300" height="70" rx="10" ry="10" class="main-box" />
+                            <text x="400" y="115" class="text" style="font-size: 20px; font-weight: bold;">Installateur
+                                Identity</text>
+
+                            <!-- Flux initial -->
+                            <line x1="400" y1="150" x2="400" y2="180" class="arrow" />
+                            <text x="400" y="165" class="small-text" style="text-anchor: middle;">Lance la
+                                configuration</text>
+
+                            <!-- Point de décision : Choix de l'intégration IdP -->
+                            <rect x="200" y="190" width="400" height="70" rx="10" ry="10" class="decision-box" />
+                            <text x="400" y="210" class="text">Choix : Intégrer Federation</text>
+                            <text x="400" y="230" class="text">ou configurer un IdP externe ?</text>
+
+                            <!-- Chemin 1 : Installation de Federation -->
+                            <line x1="300" y1="260" x2="250" y2="290" class="arrow" />
+                            <text x="275" y="275" class="small-text" transform="rotate(-30 275 275)">Installer
+                                Federation</text>
+                            <rect x="100" y="300" width="300" height="70" rx="10" ry="10" class="main-box" />
+                            <text x="250" y="335" class="text">Installateur Federation</text>
+
+                            <!-- Chemin 2 : Requête à l'Issuer -->
+                            <line x1="500" y1="260" x2="550" y2="290" class="arrow" />
+                            <text x="525" y="275" class="small-text" transform="rotate(30 525 275)">IdP Externe</text>
+
+                            <rect x="400" y="300" width="300" height="70" rx="10" ry="10" class="process-box" />
+                            <text x="550" y="335" class="text">Envoi de Requête à l'Issuer</text>
+
+                            <line x1="550" y1="370" x2="550" y2="400" class="arrow" />
+                            <rect x="400" y="410" width="300" height="70" rx="10" ry="10" class="box" />
+                            <text x="550" y="445" class="text">Réponse de l'Issuer (JSON)</text>
+
+                            <line x1="550" y1="480" x2="550" y2="510" class="arrow" />
+                            <rect x="400" y="520" width="300" height="70" rx="10" ry="10" class="process-box" />
+                            <text x="550" y="555" class="text">Analyse et Parsing JSON</text>
+
+                            <line x1="550" y1="590" x2="550" y2="620" class="arrow" />
+                            <rect x="400" y="630" width="300" height="50" rx="10" ry="10" class="box" />
+                            <text x="550" y="655" class="text">Récupération Champs Utiles</text>
+                            <text x="550" y="670" class="small-text">(Token, Endpoint)</text>
+
+                        </svg>
+                        <figcaption>Trace 3 : Architecture et flux de décision de l'installateur Identity pour
+                            l'intégration des fournisseurs d'identité.</figcaption>
+                    </figure>
+                    <h6>Présentation</h6>
+                    <p>Cette trace représente le flux de données entre l'installateur Identity et l'API (Application
+                        Programming Interface) du fournisseur d'identités. Les données transmises sont sous format JSON
+                        puis traitées à l'aide de scripts PowerShell et librairie dédiées.</p>
                     <h6>Savoirs mobilisés :</h6>
                     <ul>
                         <li>Le développement d'applications communicantes exige la compréhension des protocoles
                             d'échange de données (comme le format JSON (JavaScript Object Notation)) et la capacité à
                             interagir avec des services externes via des API (Application Programming Interface) pour
                             des flux d'information complexes.</li>
-                        <li>La virtualisation est une technologie fondamentale pour la gestion flexible des
-                            infrastructures informatiques, permettant le déploiement et l'administration de machines
-                            virtuelles (VMs) pour des environnements de développement, de test et de production.</li>
+                        <li>L'utilisation de machines
+                            virtuelles (VMs) pour des environnements de développement, de test et de production sont
+                            utiles, notamment lorsqu'il faut créer de nombreuses machines afin d'avoir une maquette
+                            multi-machines réalistes avec une base de données décentralisée, un Active Directory ou
+                            encore un contrôlleur de domaine.</li>
                         <li>La sécurisation des systèmes complexes implique une connaissance approfondie des
                             environnements (AD (Active Directory), IIS (Internet Information Services)), des mécanismes
                             de gestion des certificats, du réseau, et de l'analyse des journaux (logs) pour le
@@ -436,12 +611,12 @@
                             Identity Provider (IdP) pour récupérer dynamiquement des informations essentielles, telles
                             que des jetons et des points de terminaison, au format JSON (JavaScript Object Notation).
                             Cela démontre ma capacité à créer des applications interopérables et communicantes. J'ai
-                            également étudié en profondeur les architectures des API (Application Programming Interface)
+                            également étudié en profondeur les architectures des API (Application Programming Interface) d'Identity
                             REST (Representational State Transfer) et leur documentation via Swagger.</li>
                         <li>J'ai acquis une bonne familiarisation avec l'utilisation des machines virtuelles (VMs) sous
                             Windows Server, un environnement que j'ai utilisé pour le développement, les tests et la
                             validation de l'installateur et des solutions logicielles, démontrant ainsi ma capacité à
-                            travailler dans des environnements virtualisés.</li>
+                            travailler dans des environnements virtualisés et de les faire fonctionner ensemble.</li>
                         <li>J'ai acquis une familiarisation approfondie avec divers environnements Microsoft (AD (Active
                             Directory), Azure, Teams, IIS (Internet Information Services), PowerShell, certificats,
                             domaines, réseau, observateur d'événements). J'ai également appris à analyser des journaux
@@ -476,24 +651,152 @@
                             visualisation.</li>
                         <li><strong>AC 4 :</strong> Manipuler des données hétérogènes.</li>
                     </ul>
-                    <h5>Les projets :</h5>
-                    <p>Au sein de l'équipe de Systancia, j'ai été en charge de la refonte de l'outil d'installation des
-                        solutions Identity, Federation et Identity Provisioning, passant d'InstallShield à Inno Setup.
-                        Ce projet a exigé de ma part une compréhension approfondie des logiciels existants, la
-                        formalisation des besoins clients et le développement d'un installateur modulaire, robuste,
-                        ergonomique et intégrable dans une chaîne d'intégration continue (CI). En parallèle, j'ai
-                        développé des outils d'automatisation des tests, comme un générateur de données multi-threadé en
-                        Python.</p>
+                    <figure class="svg-trace">
+                        <svg width="800" height="650" viewBox="0 0 800 650" aria-labelledby="svgTitle svgDesc">
+                            <title id="svgTitle">Flux de Gestion des Correctifs de l'Installateur</title>
+                            <desc id="svgDesc">Diagramme illustrant le processus par lequel l'installateur communique avec la base de données pour récupérer l'historique des correctifs, les compare avec les versions embarquées et exécute les mises à jour nécessaires.</desc>
 
+                            <defs>
+                                <marker id="arrowhead" markerWidth="10" height="7" refX="0" refY="3.5" orient="auto">
+                                    <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+                                </marker>
+                                <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                                    <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.3"/>
+                                </filter>
+                            </defs>
+
+                            <!-- Style CSS interne pour la lisibilité (couleurs fixes pour le diagramme) -->
+                            <style>
+                                .box {
+                                    fill: #f0f8ff; /* AliceBlue */
+                                    stroke: #333;
+                                    stroke-width: 2;
+                                    filter: url(#shadow);
+                                }
+                                .main-box {
+                                    fill: #e6f7ff; /* Light Cyan */
+                                    stroke: #0056b3;
+                                    stroke-width: 3;
+                                    filter: url(#shadow);
+                                }
+                                .database-shape {
+                                    fill: #add8e6; /* Light Blue */
+                                    stroke: #007bff;
+                                    stroke-width: 2;
+                                    filter: url(#shadow);
+                                }
+                                .process-box { /* Pour les étapes du flux */
+                                    fill: #fff8dc; /* Cornsilk */
+                                    stroke: #d8b400;
+                                    stroke-width: 2;
+                                    filter: url(#shadow);
+                                }
+                                .data-box { /* Pour les éléments de données */
+                                    fill: #e0ffe0; /* Pale Green */
+                                    stroke: #2e8b57;
+                                    stroke-width: 2;
+                                    filter: url(#shadow);
+                                }
+                                .text {
+                                    font-family: 'Segoe UI', Arial, sans-serif;
+                                    font-size: 16px;
+                                    fill: #333; /* Couleur fixe pour le texte interne du diagramme */
+                                    text-anchor: middle;
+                                    dominant-baseline: central;
+                                }
+                                .small-text {
+                                    font-family: 'Segoe UI', Arial, sans-serif;
+                                    font-size: 14px;
+                                    fill: #555; /* Couleur fixe pour le petit texte interne */
+                                    text-anchor: middle;
+                                    dominant-baseline: central;
+                                }
+                                .legend-text {
+                                    font-family: 'Segoe UI', Arial, sans-serif;
+                                    font-size: 12px;
+                                    fill: #666; /* Couleur fixe pour le texte de légende */
+                                    text-anchor: start;
+                                }
+                                .arrow {
+                                    stroke: #333; /* Couleur fixe pour les flèches */
+                                    stroke-width: 2;
+                                    fill: none;
+                                    marker-end: url(#arrowhead);
+                                }
+                                .connector {
+                                    stroke: #666; /* Couleur fixe pour les connecteurs */
+                                    stroke-width: 1;
+                                    stroke-dasharray: 4 2;
+                                }
+                            </style>
+
+                            <!-- Titre général du diagramme (s'adapte au thème) -->
+                            <!-- CHANGÉ : Maintenant en noir fixe (#333) pour être toujours lisible sur fond blanc -->
+                            <text x="400" y="30" class="text" style="font-size: 24px; font-weight: bold; fill: #333;">Flux de Gestion des Correctifs de l'Installateur</text>
+
+                            <!-- Légende -->
+                            <g transform="translate(60, 550)">
+                                <rect x="0" y="0" width="15" height="15" fill="#e6f7ff" stroke="#0056b3" stroke-width="1"/>
+                                <text x="20" y="7.5" class="legend-text">Installateur</text>
+                                <rect x="0" y="20" width="15" height="15" fill="#add8e6" stroke="#007bff" stroke-width="1"/>
+                                <text x="20" y="27.5" class="legend-text">Base de Données</text>
+                                <rect x="0" y="40" width="15" height="15" fill="#fff8dc" stroke="#d8b400" stroke-width="1"/>
+                                <text x="20" y="47.5" class="legend-text">Processus</text>
+                                <rect x="0" y="60" width="15" height="15" fill="#e0ffe0" stroke="#2e8b57" stroke-width="1"/>
+                                <text x="20" y="67.5" class="legend-text">Donnée / Résultat</text>
+                            </g>
+
+                            <!-- Installateur -->
+                            <rect x="300" y="80" width="200" height="70" rx="10" ry="10" class="main-box" />
+                            <text x="400" y="115" class="text" style="font-size: 20px; font-weight: bold;">Installateur</text>
+
+                            <!-- Requête à la Base de Données -->
+                            <line x1="400" y1="150" x2="400" y2="180" class="arrow" />
+                            <text x="400" y="165" class="small-text" style="text-anchor: middle;">Requête historique</text>
+
+                            <ellipse cx="400" cy="230" rx="100" ry="40" class="database-shape" />
+                            <text x="400" y="230" class="text">Base de Données</text>
+                            <text x="400" y="260" class="small-text">(table dbo.PathHistory)</text>
+
+                            <!-- Récupération de la Date du Dernier Correctif -->
+                            <line x1="400" y1="270" x2="400" y2="300" class="arrow" />
+                            <text x="400" y="285" class="small-text" style="text-anchor: middle;">Réponse : Date</text>
+
+                            <rect x="300" y="310" width="200" height="60" rx="5" ry="5" class="data-box" />
+                            <text x="400" y="340" class="text">Date Dernier Correctif</text>
+
+                            <!-- Comparaison avec les Correctifs Embarqués -->
+                            <line x1="400" y1="370" x2="400" y2="400" class="arrow" />
+                            <text x="400" y="385" class="small-text" style="text-anchor: middle;">Transmet à</text>
+
+                            <rect x="100" y="410" width="200" height="60" rx="5" ry="5" class="data-box" />
+                            <text x="200" y="440" class="text">Liste Correctifs</text>
+                            <text x="200" y="455" class="text">Embarqués</text>
+
+                            <rect x="350" y="410" width="300" height="70" rx="10" ry="10" class="process-box" />
+                            <text x="500" y="445" class="text">Comparaison des Versions</text>
+
+                            <line x1="250" y1="440" x2="350" y2="440" class="arrow" />
+                            <text x="300" y="430" class="small-text" style="text-anchor: middle;">Avec</text>
+
+                            <!-- Exécution des Correctifs -->
+                            <line x1="500" y1="480" x2="500" y2="510" class="arrow" />
+                            <text x="500" y="495" class="small-text" style="text-anchor: middle;">Décision d'exécution</text>
+
+                            <rect x="300" y="520" width="200" height="70" rx="10" ry="10" class="process-box" />
+                            <text x="400" y="555" class="text">Exécution des</text>
+                            <text x="400" y="570" class="text">Correctifs Nécessaires</text>
+
+                        </svg>
+                        <figcaption>Trace 4.1 : Fonction d'historisation des correctifs dans la base de données de l'application.</figcaption>
+                    </figure>
                     <h6>Savoirs mobilisés :</h6>
                     <ul>
-                        <li>*Aucune information explicite n'est fournie concernant l'optimisation des modèles de données
-                            de l'entreprise.*</li>
+                        <li>L'implémentation dans la base de données d'une fonction d'historisation des correctifs permettant d'assurrer une cohérence dans ces derniers.</li>
                         <li>La garantie de la confidentialité, de l'intégrité et de la sécurité des données est un
                             pilier de la gestion de l'information, exigeant des pratiques de stockage sécurisé des
                             informations sensibles et des validations rigoureuses de leur exactitude.</li>
-                        <li>*Aucune information explicite n'est fournie concernant l'organisation de la restitution de
-                            données à travers la programmation et la visualisation.*</li>
+                        <li>AC 3 non abordée.</li>
                         <li>La manipulation et l'intégration de données provenant de sources et de formats divers (par
                             exemple, des données générées, des données de systèmes externes, des fichiers CSV (Comma
                             Separated Values)) sont des compétences essentielles pour la préparation et l'analyse de
@@ -502,19 +805,17 @@
 
                     <h6>Savoir-faire mis en œuvre :</h6>
                     <ul>
-                        <li>*Aucune information explicite n'est fournie concernant l'optimisation des modèles de données
-                            de l'entreprise.*</li>
+                        <li>J'ai mis en place une fonction d'historisation dans la base de données de l'application. En effet, il est important d'avoir cette fonctionnalité afin que l'installateur puisse appliquer les correctifs correctement (ne pas appliquer ceux antérieurs à la date du plus récent dans la base et dans l'ordre chronologique) </li>
                         <li>J'ai mis en place des mesures garantissant la confidentialité des données en assurant que
                             les mots de passe soient stockés de manière sécurisée et ne soient jamais affichés en clair
                             par l'installateur. J'ai également réalisé des tests sur les données, comme la vérification
                             des comptes de services via des requêtes vers l'AD (Active Directory) et les tests de
                             connexion aux bases de données, afin de valider leur intégrité et leur sécurité.</li>
-                        <li>*Aucune information explicite n'est fournie concernant l'organisation de la restitution de
-                            données à travers la programmation et la visualisation.*</li>
+                        <li>Savoir-faire non mis en œuvre.</li>
                         <li>J'ai conçu et développé un programme en Python, utilisant la bibliothèque Faker, pour
                             générer un grand nombre d'utilisateurs avec des attributs variés et cohérents (rôles,
                             période d'embauche, hiérarchie, organisations, métiers). J'ai ensuite manipulé ces données
-                            hétérogènes en les structurant dans des cadres de données (DataFrame) Pandas et en les
+                            hétérogènes en les structurant dans des Dataframes Pandas et en les
                             exportant dans des fichiers CSV (Comma Separated Values), pour être utilisés par le moteur
                             de provisionnement, démontrant ma capacité à préparer et à transformer des données pour des
                             systèmes tiers.</li>
@@ -543,14 +844,6 @@
                         </li>
                         <li><strong>AC 4 :</strong> Définir et mettre en œuvre une démarche de suivi de projet.</li>
                     </ul>
-                    <h5>Les projets :</h5>
-                    <p>Au sein de l'équipe de Systancia, j'ai été en charge de la refonte de l'outil d'installation des
-                        solutions Identity, Federation et Identity Provisioning, passant d'InstallShield à Inno Setup.
-                        Ce projet a exigé de ma part une compréhension approfondie des logiciels existants, la
-                        formalisation des besoins clients et le développement d'un installateur modulaire, robuste,
-                        ergonomique et intégrable dans une chaîne d'intégration continue (CI). En parallèle, j'ai
-                        développé des outils d'automatisation des tests, comme un générateur de données multi-threadé en
-                        Python.</p>
 
                     <h6>Savoirs mobilisés :</h6>
                     <ul>
@@ -558,7 +851,7 @@
                             gestion de projet, nécessitant une écoute active pour capter les exigences initiales et une
                             adaptabilité pour gérer les évolutions.</li>
                         <li>*Aucune information explicite n'est fournie concernant l'identification des critères de
-                            faisabilité d'un projet informatique.*</li>
+                            faisabilité d'un projet informatique.*  </li>
                         <li>Un suivi de projet efficace implique l'utilisation d'outils de gestion des tâches et des
                             incidents, une communication transparente sur l'avancement et la capacité à estimer les
                             charges de travail.</li>
@@ -566,13 +859,14 @@
 
                     <h6>Savoir-faire mis en œuvre :</h6>
                     <ul>
-                        <li>J'ai formalisé les besoins du client pour la refonte de l'outil d'installation, en prenant
-                            en compte leurs exigences de départ (par exemple, choix d'une alternative gratuite et open
-                            source, intégration continue) et en gérant les évolutions de ces exigences (passage d'un
-                            installateur simple à un installateur modulaire avec sélection individuelle des produits).
+                        <li>J'ai formalisé les besoins de ma maîtresse d'apprentissage pour la refonte de l'outil d'installation, en prenant
+                            en compte les exigences de départ (choix d'une alternative gratuite et open
+                            source, fonctionnalités avancées, intégration continue) et en gérant les évolutions de ces exigences (passage d'un
+                            installateur simple à un installateur modulaire avec sélection individuelle des produits, implémentation de fonctionnalités liées aux correctifs ou à l'utilisation d'un fournisseur d'identité tiers).
                         </li>
-                        <li>*Aucune information explicite n'est fournie concernant l'identification des critères de
-                            faisabilité d'un projet informatique.*</li>
+                        <li>Lors des réunions quotidiennes (stand-ups), j'ai pu estimer les charges de
+                            travail des différentes tâches, contribuant ainsi à l'évaluation continue de la faisabilité
+                            du projet et à l'ajustement des tâches prévues.</li>
                         <li>J'ai utilisé le système de tickets d'Azure DevOps (incluant la gestion des bogues (bugs),
                             des récits utilisateurs (user story) et des fonctionnalités (features)) pour le suivi du
                             projet, ce qui m'a permis de développer ma concision et ma précision dans la rédaction des
@@ -605,14 +899,6 @@
                             informatique.</li>
                         <li><strong>AC 4 :</strong> Rendre compte de son activité professionnelle.</li>
                     </ul>
-                    <h5>Les projets :</h5>
-                    <p>Au sein de l'équipe de Systancia, j'ai été en charge de la refonte de l'outil d'installation des
-                        solutions Identity, Federation et Identity Provisioning, passant d'InstallShield à Inno Setup.
-                        Ce projet a exigé de ma part une compréhension approfondie des logiciels existants, la
-                        formalisation des besoins clients et le développement d'un installateur modulaire, robuste,
-                        ergonomique et intégrable dans une chaîne d'intégration continue (CI). En parallèle, j'ai
-                        développé des outils d'automatisation des tests, comme un générateur de données multi-threadé en
-                        Python.</p>
 
                     <h6>Savoirs mobilisés :</h6>
                     <ul>
@@ -629,19 +915,18 @@
 
                     <h6>Savoir-faire mis en œuvre :</h6>
                     <ul>
-                        <li>J'ai appris et appliqué l'utilisation du système de demandes de fusion (pull request), un
+                        <li>J'ai appris et appliqué l'utilisation du système de demandes de tirage (pull request), un
                             mécanisme clé de collaboration sur le code, ce qui m'a permis de m'intégrer et de contribuer
                             efficacement aux processus de développement de l'équipe.</li>
                         <li>J'ai activement communiqué avec les membres de mon équipe, notamment en transmettant les
-                            connaissances techniques acquises lors de mes périodes de tests à un collègue, démontrant ma
+                            connaissances techniques acquises lors de mes périodes de tests à un collègue qui a intégré l'équipe de validation logicielle, démontrant ma
                             capacité à partager l'information et à favoriser la montée en compétence collective.</li>
                         <li>J'ai régulièrement rendu compte de mon activité professionnelle lors des stand-ups
-                            quotidiens, incluant l'estimation des charges de travail. J'ai également contribué à la
+                            quotidiennes, incluant l'estimation des charges de travail. J'ai également contribué à la
                             documentation interne en rédigeant un article Confluence destiné aux équipes, détaillant la
                             création et l'utilisation de certificats auto-signés avec IIS (Internet Information
                             Services), ce qui démontre ma capacité à documenter et à partager mes travaux. Ma capacité à
-                            être concis et précis dans la rédaction des tickets Azure DevOps (bogues (bugs), récits
-                            utilisateurs (user story), fonctionnalités (features)) a également amélioré la compréhension
+                            être concis et précis dans la rédaction des tickets Azure DevOps (bogues, user story, fonctionnalités, etc.) a également amélioré la compréhension
                             mutuelle au sein de l'équipe.</li>
                     </ul>
                     <!-- NOUVEAU BOUTON -->
