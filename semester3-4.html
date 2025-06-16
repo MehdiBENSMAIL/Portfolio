@@ -356,7 +356,12 @@
                             plusieurs fils d'exécution (multithreading) pour la génération de données optimisée.
                         </figcaption>
                     </figure>
-                    <p>Cette trace illustre un extrait de code Python mettant en œuvre l'exécution à plusieurs fils (multithreading). Elle démontre une technique d'optimisation algorithmique où une tâche longue (comme la génération de données utilisateurs) est exécutée dans un fil d'exécution séparé, permettant ainsi à l'interface utilisateur de rester réactive.</p>
+
+                    <h6>Présentation</h6>
+                    <p>Cette trace illustre un extrait de code Python mettant en œuvre l'exécution à plusieurs fils
+                        (multithreading). Elle démontre une technique d'optimisation algorithmique où une tâche longue
+                        (comme la génération de données utilisateurs) est exécutée dans un fil d'exécution séparé,
+                        permettant ainsi à l'interface utilisateur de rester réactive.</p>
 
                     <h6>Savoirs mobilisés :</h6>
                     <ul>
@@ -427,8 +432,7 @@
                                 JSON.</desc>
 
                             <defs>
-                                <marker id="arrowhead" markerWidth="10" height="7" refX="0" refY="3.5"
-                                    orient="auto">
+                                <marker id="arrowhead" markerWidth="10" height="7" refX="0" refY="3.5" orient="auto">
                                     <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
                                 </marker>
                                 <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
@@ -610,7 +614,8 @@
                             Identity Provider (IdP) pour récupérer dynamiquement des informations essentielles, telles
                             que des jetons et des points de terminaison, au format JSON (JavaScript Object Notation).
                             Cela démontre ma capacité à créer des applications interopérables et communicantes. J'ai
-                            également étudié en profondeur les architectures des API (Application Programming Interface) d'Identity
+                            également étudié en profondeur les architectures des API (Application Programming Interface)
+                            d'Identity
                             REST (Representational State Transfer) et leur documentation via Swagger.</li>
                         <li>J'ai acquis une bonne familiarisation avec l'utilisation des machines virtuelles (VMs) sous
                             Windows Server, un environnement que j'ai utilisé pour le développement, les tests et la
@@ -653,77 +658,101 @@
                     <figure class="svg-trace">
                         <svg width="800" height="650" viewBox="0 0 800 650" aria-labelledby="svgTitle svgDesc">
                             <title id="svgTitle">Flux de Gestion des Correctifs de l'Installateur</title>
-                            <desc id="svgDesc">Diagramme illustrant le processus par lequel l'installateur communique avec la base de données pour récupérer l'historique des correctifs, les compare avec les versions embarquées et exécute les mises à jour nécessaires.</desc>
+                            <desc id="svgDesc">Diagramme illustrant le processus par lequel l'installateur communique
+                                avec la base de données pour récupérer l'historique des correctifs, les compare avec les
+                                versions embarquées et exécute les mises à jour nécessaires.</desc>
 
                             <defs>
                                 <marker id="arrowhead" markerWidth="10" height="7" refX="0" refY="3.5" orient="auto">
                                     <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
                                 </marker>
                                 <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-                                    <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.3"/>
+                                    <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000"
+                                        flood-opacity="0.3" />
                                 </filter>
                             </defs>
 
                             <!-- Style CSS interne pour la lisibilité (couleurs fixes pour le diagramme) -->
                             <style>
                                 .box {
-                                    fill: #f0f8ff; /* AliceBlue */
+                                    fill: #f0f8ff;
+                                    /* AliceBlue */
                                     stroke: #333;
                                     stroke-width: 2;
                                     filter: url(#shadow);
                                 }
+
                                 .main-box {
-                                    fill: #e6f7ff; /* Light Cyan */
+                                    fill: #e6f7ff;
+                                    /* Light Cyan */
                                     stroke: #0056b3;
                                     stroke-width: 3;
                                     filter: url(#shadow);
                                 }
+
                                 .database-shape {
-                                    fill: #add8e6; /* Light Blue */
+                                    fill: #add8e6;
+                                    /* Light Blue */
                                     stroke: #007bff;
                                     stroke-width: 2;
                                     filter: url(#shadow);
                                 }
-                                .process-box { /* Pour les étapes du flux */
-                                    fill: #fff8dc; /* Cornsilk */
+
+                                .process-box {
+                                    /* Pour les étapes du flux */
+                                    fill: #fff8dc;
+                                    /* Cornsilk */
                                     stroke: #d8b400;
                                     stroke-width: 2;
                                     filter: url(#shadow);
                                 }
-                                .data-box { /* Pour les éléments de données */
-                                    fill: #e0ffe0; /* Pale Green */
+
+                                .data-box {
+                                    /* Pour les éléments de données */
+                                    fill: #e0ffe0;
+                                    /* Pale Green */
                                     stroke: #2e8b57;
                                     stroke-width: 2;
                                     filter: url(#shadow);
                                 }
+
                                 .text {
                                     font-family: 'Segoe UI', Arial, sans-serif;
                                     font-size: 16px;
-                                    fill: #333; /* Couleur fixe pour le texte interne du diagramme */
+                                    fill: #333;
+                                    /* Couleur fixe pour le texte interne du diagramme */
                                     text-anchor: middle;
                                     dominant-baseline: central;
                                 }
+
                                 .small-text {
                                     font-family: 'Segoe UI', Arial, sans-serif;
                                     font-size: 14px;
-                                    fill: #555; /* Couleur fixe pour le petit texte interne */
+                                    fill: #555;
+                                    /* Couleur fixe pour le petit texte interne */
                                     text-anchor: middle;
                                     dominant-baseline: central;
                                 }
+
                                 .legend-text {
                                     font-family: 'Segoe UI', Arial, sans-serif;
                                     font-size: 12px;
-                                    fill: #666; /* Couleur fixe pour le texte de légende */
+                                    fill: #666;
+                                    /* Couleur fixe pour le texte de légende */
                                     text-anchor: start;
                                 }
+
                                 .arrow {
-                                    stroke: #333; /* Couleur fixe pour les flèches */
+                                    stroke: #333;
+                                    /* Couleur fixe pour les flèches */
                                     stroke-width: 2;
                                     fill: none;
                                     marker-end: url(#arrowhead);
                                 }
+
                                 .connector {
-                                    stroke: #666; /* Couleur fixe pour les connecteurs */
+                                    stroke: #666;
+                                    /* Couleur fixe pour les connecteurs */
                                     stroke-width: 1;
                                     stroke-dasharray: 4 2;
                                 }
@@ -731,27 +760,35 @@
 
                             <!-- Titre général du diagramme (s'adapte au thème) -->
                             <!-- CHANGÉ : Maintenant en noir fixe (#333) pour être toujours lisible sur fond blanc -->
-                            <text x="400" y="30" class="text" style="font-size: 24px; font-weight: bold; fill: #333;">Flux de Gestion des Correctifs de l'Installateur</text>
+                            <text x="400" y="30" class="text"
+                                style="font-size: 24px; font-weight: bold; fill: #333;">Flux de Gestion des Correctifs
+                                de l'Installateur</text>
 
                             <!-- Légende -->
                             <g transform="translate(60, 550)">
-                                <rect x="0" y="0" width="15" height="15" fill="#e6f7ff" stroke="#0056b3" stroke-width="1"/>
+                                <rect x="0" y="0" width="15" height="15" fill="#e6f7ff" stroke="#0056b3"
+                                    stroke-width="1" />
                                 <text x="20" y="7.5" class="legend-text">Installateur</text>
-                                <rect x="0" y="20" width="15" height="15" fill="#add8e6" stroke="#007bff" stroke-width="1"/>
+                                <rect x="0" y="20" width="15" height="15" fill="#add8e6" stroke="#007bff"
+                                    stroke-width="1" />
                                 <text x="20" y="27.5" class="legend-text">Base de Données</text>
-                                <rect x="0" y="40" width="15" height="15" fill="#fff8dc" stroke="#d8b400" stroke-width="1"/>
+                                <rect x="0" y="40" width="15" height="15" fill="#fff8dc" stroke="#d8b400"
+                                    stroke-width="1" />
                                 <text x="20" y="47.5" class="legend-text">Processus</text>
-                                <rect x="0" y="60" width="15" height="15" fill="#e0ffe0" stroke="#2e8b57" stroke-width="1"/>
+                                <rect x="0" y="60" width="15" height="15" fill="#e0ffe0" stroke="#2e8b57"
+                                    stroke-width="1" />
                                 <text x="20" y="67.5" class="legend-text">Donnée / Résultat</text>
                             </g>
 
                             <!-- Installateur -->
                             <rect x="300" y="80" width="200" height="70" rx="10" ry="10" class="main-box" />
-                            <text x="400" y="115" class="text" style="font-size: 20px; font-weight: bold;">Installateur</text>
+                            <text x="400" y="115" class="text"
+                                style="font-size: 20px; font-weight: bold;">Installateur</text>
 
                             <!-- Requête à la Base de Données -->
                             <line x1="400" y1="150" x2="400" y2="180" class="arrow" />
-                            <text x="400" y="165" class="small-text" style="text-anchor: middle;">Requête historique</text>
+                            <text x="400" y="165" class="small-text" style="text-anchor: middle;">Requête
+                                historique</text>
 
                             <ellipse cx="400" cy="230" rx="100" ry="40" class="database-shape" />
                             <text x="400" y="230" class="text">Base de Données</text>
@@ -780,18 +817,21 @@
 
                             <!-- Exécution des Correctifs -->
                             <line x1="500" y1="480" x2="500" y2="510" class="arrow" />
-                            <text x="500" y="495" class="small-text" style="text-anchor: middle;">Décision d'exécution</text>
+                            <text x="500" y="495" class="small-text" style="text-anchor: middle;">Décision
+                                d'exécution</text>
 
                             <rect x="300" y="520" width="200" height="70" rx="10" ry="10" class="process-box" />
                             <text x="400" y="555" class="text">Exécution des</text>
                             <text x="400" y="570" class="text">Correctifs Nécessaires</text>
 
                         </svg>
-                        <figcaption>Trace 4.1 : Fonction d'historisation des correctifs dans la base de données de l'application.</figcaption>
+                        <figcaption>Trace 4.1 : Fonction d'historisation des correctifs dans la base de données de
+                            l'application.</figcaption>
                     </figure>
                     <h6>Savoirs mobilisés :</h6>
                     <ul>
-                        <li>L'implémentation dans la base de données d'une fonction d'historisation des correctifs permettant d'assurrer une cohérence dans ces derniers.</li>
+                        <li>L'implémentation dans la base de données d'une fonction d'historisation des correctifs
+                            permettant d'assurrer une cohérence dans ces derniers.</li>
                         <li>La garantie de la confidentialité, de l'intégrité et de la sécurité des données est un
                             pilier de la gestion de l'information, exigeant des pratiques de stockage sécurisé des
                             informations sensibles et des validations rigoureuses de leur exactitude.</li>
@@ -804,7 +844,10 @@
 
                     <h6>Savoir-faire mis en œuvre :</h6>
                     <ul>
-                        <li>J'ai mis en place une fonction d'historisation dans la base de données de l'application. En effet, il est important d'avoir cette fonctionnalité afin que l'installateur puisse appliquer les correctifs correctement (ne pas appliquer ceux antérieurs à la date du plus récent dans la base et dans l'ordre chronologique) </li>
+                        <li>J'ai mis en place une fonction d'historisation dans la base de données de l'application. En
+                            effet, il est important d'avoir cette fonctionnalité afin que l'installateur puisse
+                            appliquer les correctifs correctement (ne pas appliquer ceux antérieurs à la date du plus
+                            récent dans la base et dans l'ordre chronologique) </li>
                         <li>J'ai mis en place des mesures garantissant la confidentialité des données en assurant que
                             les mots de passe soient stockés de manière sécurisée et ne soient jamais affichés en clair
                             par l'installateur. J'ai également réalisé des tests sur les données, comme la vérification
@@ -850,7 +893,7 @@
                             gestion de projet, nécessitant une écoute active pour capter les exigences initiales et une
                             adaptabilité pour gérer les évolutions.</li>
                         <li>*Aucune information explicite n'est fournie concernant l'identification des critères de
-                            faisabilité d'un projet informatique.*  </li>
+                            faisabilité d'un projet informatique.* </li>
                         <li>Un suivi de projet efficace implique l'utilisation d'outils de gestion des tâches et des
                             incidents, une communication transparente sur l'avancement et la capacité à estimer les
                             charges de travail.</li>
@@ -858,10 +901,14 @@
 
                     <h6>Savoir-faire mis en œuvre :</h6>
                     <ul>
-                        <li>J'ai formalisé les besoins de ma maîtresse d'apprentissage pour la refonte de l'outil d'installation, en prenant
+                        <li>J'ai formalisé les besoins de ma maîtresse d'apprentissage pour la refonte de l'outil
+                            d'installation, en prenant
                             en compte les exigences de départ (choix d'une alternative gratuite et open
-                            source, fonctionnalités avancées, intégration continue) et en gérant les évolutions de ces exigences (passage d'un
-                            installateur simple à un installateur modulaire avec sélection individuelle des produits, implémentation de fonctionnalités liées aux correctifs ou à l'utilisation d'un fournisseur d'identité tiers).
+                            source, fonctionnalités avancées, intégration continue) et en gérant les évolutions de ces
+                            exigences (passage d'un
+                            installateur simple à un installateur modulaire avec sélection individuelle des produits,
+                            implémentation de fonctionnalités liées aux correctifs ou à l'utilisation d'un fournisseur
+                            d'identité tiers).
                         </li>
                         <li>Lors des réunions quotidiennes (stand-ups), j'ai pu estimer les charges de
                             travail des différentes tâches, contribuant ainsi à l'évaluation continue de la faisabilité
@@ -918,14 +965,16 @@
                             mécanisme clé de collaboration sur le code, ce qui m'a permis de m'intégrer et de contribuer
                             efficacement aux processus de développement de l'équipe.</li>
                         <li>J'ai activement communiqué avec les membres de mon équipe, notamment en transmettant les
-                            connaissances techniques acquises lors de mes périodes de tests à un collègue qui a intégré l'équipe de validation logicielle, démontrant ma
+                            connaissances techniques acquises lors de mes périodes de tests à un collègue qui a intégré
+                            l'équipe de validation logicielle, démontrant ma
                             capacité à partager l'information et à favoriser la montée en compétence collective.</li>
                         <li>J'ai régulièrement rendu compte de mon activité professionnelle lors des stand-ups
                             quotidiennes, incluant l'estimation des charges de travail. J'ai également contribué à la
                             documentation interne en rédigeant un article Confluence destiné aux équipes, détaillant la
                             création et l'utilisation de certificats auto-signés avec IIS (Internet Information
                             Services), ce qui démontre ma capacité à documenter et à partager mes travaux. Ma capacité à
-                            être concis et précis dans la rédaction des tickets Azure DevOps (bogues, user story, fonctionnalités, etc.) a également amélioré la compréhension
+                            être concis et précis dans la rédaction des tickets Azure DevOps (bogues, user story,
+                            fonctionnalités, etc.) a également amélioré la compréhension
                             mutuelle au sein de l'équipe.</li>
                     </ul>
                     <!-- NOUVEAU BOUTON -->
