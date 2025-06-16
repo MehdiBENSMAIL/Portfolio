@@ -353,25 +353,36 @@
                         <img src="img/c2-1.png"
                             alt="Capture d'écran de code Python illustrant l'optimisation par exécution à plusieurs fils d'exécution">
                         <figcaption>Trace 2.1 : Extrait de code Python illustrant l'utilisation de l'exécution à
-                            plusieurs fils d'exécution (multithreading) pour la génération de données optimisée.
+                            plusieurs fils pour ne pas bloquer l'interface graphique.
                         </figcaption>
                     </figure>
 
-                    <h6>Présentation</h6>
-                    <p>Cette trace illustre un extrait de code Python mettant en œuvre l'exécution à plusieurs fils
-                        (multithreading). Elle démontre une technique d'optimisation algorithmique où une tâche longue
-                        (comme la génération de données utilisateurs) est exécutée dans un fil d'exécution séparé,
-                        permettant ainsi à l'interface utilisateur de rester réactive.</p>
+                    <figure class="svg-trace">
+                        <img src="img/c2-2.png"
+                            alt="Capture d'écran de code Python illustrant l'optimisation par exécution à plusieurs fils d'exécution">
+                        <figcaption>Trace 2.2 : Extrait de code Python illustrant l'utilisation de l'exécution à
+                            plusieurs fils pour une génération de données optimisée.
+                        </figcaption>
+                    </figure>
+                     <h6>Présentation</h6>
+                    <p>Ces traces illustrent l'implémentation de techniques d'optimisation avancées pour un générateur de
+                        données en Python. La Trace 2.1 montre comment l'application principale lance la tâche de
+                        génération dans un fil d'exécution (thread) séparé, garantissant ainsi la réactivité de
+                        l'interface utilisateur (UI). La Trace 2.2 détaille l'algorithme sous-jacent, divisant le
+                        travail en plusieurs fils d'exécution pour accélérer significativement le traitement de grands
+                        volumes de données.</p>
 
                     <h6>Savoirs mobilisés :</h6>
                     <ul>
                         <li>L'efficacité des traitements des données complexes dépend du choix judicieux de structures
                             de données. L'utilisation de bibliothèques comme Pandas et ses Dataframes
-                            est une approche efficace pour organiser et manipuler de grands ensembles de données.</li>
-                        <li>L'optimisation des performances des applications, notamment pour les traitements à forte
-                            intensité de calcul, repose sur l'emploi de techniques telles que
-                            l'exécution à plusieurs fils pour la parallélisation des
-                            opérations.</li>
+                            est une approche efficace pour organiser et manipuler de grands ensembles de
+                            données.</li>
+                        <li>L'optimisation des applications pour des traitements à forte intensité de calcul et la
+                            garantie de la réactivité de l'interface utilisateur repose sur l'emploi de techniques
+                            algorithmiques avancées, telles que l'exécution à plusieurs fils d'exécution
+                            (multithreading) et l'utilisation de pools de fils d'exécution (`ThreadPoolExecutor`) pour
+                            la parallélisation des opérations.</li>
                         <li>La sécurisation des données et du code est un enjeu majeur du développement logiciel,
                             impliquant la protection des informations sensibles (par exemple, les mots de passe) et la
                             mise en place de mesures préventives et de tests pour identifier les vulnérabilités.</li>
@@ -380,17 +391,21 @@
 
                     <h6>Savoir-faire mis en œuvre :</h6>
                     <ul>
-                        <li>J'ai choisi et utilisé les Dataframes de la bibliothèque Pandas dans un
+                        <li>J'ai choisi et utilisé les cadres de données (Dataframes) de la bibliothèque Pandas dans un
                             programme Python car largement documenté, fiable et simple d'utilisation. Cette structure
-                            m'a permis d'organiser et de manipuler efficacement des
-                            jeux de données d'utilisateurs générés avec des attributs complexes et hétérogènes (rôles,
-                            période d'embauche, hiérarchie, organisations, métiers, etc.), avant de les exporter dans un
-                            format CSV (Comma Separated Values) pour une utilisation ultérieure avec le moteur de
-                            provisionnement.</li>
+                            m'a permis d'organiser et de manipuler efficacement des jeux de données d'utilisateurs
+                            générés avec des attributs complexes et hétérogènes (rôles, période d'embauche, hiérarchie,
+                            organisations, métiers, etc.), avant de les exporter dans un format CSV (Comma Separated Values)
+                            pour une utilisation ultérieure avec le moteur de provisionnement.</li>
                         <li>J'ai optimisé un programme Python dédié à la génération d'utilisateurs en y intégrant
-                            l'exécution à plusieurs fils d'exécution (multithreading). Cette technique m'a permis
-                            d'améliorer considérablement les performances, rendant possible la génération de centaines
-                            de milliers, voire de millions d'utilisateurs avec une grande efficacité.</li>
+                            l'exécution à plusieurs fils d'exécution (multithreading). J'ai conçu la logique pour
+                            lancer la tâche de génération dans un fil d'exécution séparé (`threading.Thread`) afin de
+                            garantir la réactivité de l'interface utilisateur (Trace 2.1). De plus, j'ai structuré le
+                            processus de génération en utilisant un pool de fils d'exécution
+                            (`concurrent.futures.ThreadPoolExecutor`) afin de diviser le travail en plusieurs blocs
+                            (chunks) et de les traiter en parallèle (Trace 2.2), ce qui a considérablement amélioré les
+                            performances, permettant de générer des centaines de milliers, voire des millions
+                            d'utilisateurs avec une grande efficacité.</li>
                         <li>J'ai mis en œuvre des mesures pour garantir la sécurisation des données en veillant à ce que
                             les mots de passe soient stockés de manière appropriée et ne soient jamais affichés en clair
                             par le programme. J'ai également renforcé la sécurité des installateurs par l'exécution de
