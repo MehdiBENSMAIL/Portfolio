@@ -74,7 +74,7 @@
                     <figure class="svg-trace">
                         <!-- INLINED SVG CODE STARTS HERE -->
 
-                        <svg width="800" height="650" viewBox="0 0 800 650" aria-labelledby="svgTitle svgDesc">
+                        <svg width="800" height="550" viewBox="0 0 800 550" aria-labelledby="svgTitle svgDesc">
                             <title id="svgTitle">Architecture des Installateurs de Solutions Systancia</title>
                             <desc id="svgDesc">Diagramme illustrant l'installateur principal Identity, ses composants
                                 internes, et le processus de choix entre l'installation des systèmes Identity
@@ -84,52 +84,43 @@
                                 <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5"
                                     orient="auto">
                                     <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
-                                    <!-- Couleur fixe pour la pointe de flèche -->
                                 </marker>
                                 <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
                                     <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000"
                                         flood-opacity="0.3" />
                                 </filter>
-                                <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="0" refY="3.5"
+                                <marker id="arrowhead-red" markerWidth="10" height="7" refX="0" refY="3.5"
                                     orient="auto">
                                     <polygon points="0 0, 10 3.5, 0 7" fill="#C00" />
                                 </marker>
                             </defs>
 
-                            <!-- Style CSS interne pour la lisibilité -->
+                            <!-- Style CSS interne pour la lisibilité (couleurs fixes pour le diagramme) -->
                             <style>
                                 .box {
-                                    fill: #f0f8ff;
-                                    /* AliceBlue - Reste clair */
+                                    fill: #f0f8ff; /* AliceBlue */
                                     stroke: #333;
-                                    /* Reverti à la couleur fixe foncée */
                                     stroke-width: 2;
                                     filter: url(#shadow);
                                 }
 
                                 .main-box {
-                                    fill: #e6f7ff;
-                                    /* Light Cyan - Reste clair */
+                                    fill: #e6f7ff; /* Light Cyan */
                                     stroke: #0056b3;
-                                    /* Reverti à la couleur fixe foncée */
                                     stroke-width: 3;
                                     filter: url(#shadow);
                                 }
 
                                 .installer-box {
-                                    fill: #dff0d8;
-                                    /* Light Greenish Blue - Reste clair */
+                                    fill: #dff0d8; /* Light Greenish Blue */
                                     stroke: #3c763d;
-                                    /* Reverti à la couleur fixe foncée */
                                     stroke-width: 2;
                                     filter: url(#shadow);
                                 }
 
                                 .decision-box {
-                                    fill: #ffebcd;
-                                    /* BlanchedAlmond - Reste clair */
+                                    fill: #ffebcd; /* BlanchedAlmond */
                                     stroke: #d49a00;
-                                    /* Reverti à la couleur fixe foncée */
                                     stroke-width: 2;
                                     filter: url(#shadow);
                                 }
@@ -137,8 +128,7 @@
                                 .text {
                                     font-family: 'Segoe UI', Arial, sans-serif;
                                     font-size: 16px;
-                                    fill: #333;
-                                    /* Reverti à la couleur fixe foncée pour les autres textes */
+                                    fill: #333; /* Couleur fixe pour le texte interne du diagramme */
                                     text-anchor: middle;
                                     dominant-baseline: central;
                                 }
@@ -146,8 +136,7 @@
                                 .small-text {
                                     font-family: 'Segoe UI', Arial, sans-serif;
                                     font-size: 14px;
-                                    fill: #555;
-                                    /* Reverti à la couleur fixe foncée */
+                                    fill: #555; /* Couleur fixe pour le petit texte interne */
                                     text-anchor: middle;
                                     dominant-baseline: central;
                                 }
@@ -155,38 +144,29 @@
                                 .legend-text {
                                     font-family: 'Segoe UI', Arial, sans-serif;
                                     font-size: 12px;
-                                    fill: #666;
-                                    /* Reverti à la couleur fixe foncée */
+                                    fill: #666; /* Couleur fixe pour le texte de légende */
                                     text-anchor: start;
                                 }
 
                                 .arrow {
-                                    stroke: #333;
-                                    /* Reverti à la couleur fixe foncée */
+                                    stroke: #333; /* Couleur fixe pour les flèches */
                                     stroke-width: 2;
                                     fill: none;
                                     marker-end: url(#arrowhead);
                                 }
 
                                 .connector {
-                                    stroke: #666;
-                                    /* Reverti à la couleur fixe foncée */
+                                    stroke: #666; /* Couleur fixe pour les connecteurs */
                                     stroke-width: 1;
                                     stroke-dasharray: 4 2;
                                 }
                             </style>
 
-                            <!-- Titre général du diagramme -->
-                            <!-- CHANGÉ : Maintenant en noir fixe (#333) pour être toujours lisible sur fond blanc -->
-                            <text x="400" y="30" class="text"
-                                style="font-size: 24px; font-weight: bold; fill: #333;">Architecture des
-                                Installateurs Systancia</text>
-
                             <!-- Légende -->
-                            <g transform="translate(60, 590)">
-                                <rect x="0" y="0" width="15" height="15" fill="#f0f8ff" stroke="#333"
+                            <g transform="translate(60, 480)">
+                                <rect x="0" y="0" width="15" height="15" fill="#e6f7ff" stroke="#0056b3"
                                     stroke-width="1" />
-                                <text x="20" y="7.5" class="legend-text">Composant principal</text>
+                                <text x="20" y="7.5" class="legend-text">Installateur Principal</text>
                                 <rect x="0" y="20" width="15" height="15" fill="#dff0d8" stroke="#3c763d"
                                     stroke-width="1" />
                                 <text x="20" y="27.5" class="legend-text">Installateur secondaire</text>
@@ -198,56 +178,55 @@
                             </g>
 
                             <!-- Installateur Principal : Identity -->
-                            <rect x="100" y="80" width="600" height="200" rx="10" ry="10" class="main-box" />
-                            <text x="400" y="100" class="text" style="font-size: 20px; font-weight: bold;">Installateur
+                            <rect x="100" y="60" width="600" height="200" rx="10" ry="10" class="main-box" />
+                            <text x="400" y="80" class="text" style="font-size: 20px; font-weight: bold;">Installateur
                                 Principal : Identity</text>
 
                             <!-- Contenus de l'installateur Identity -->
-                            <rect x="140" y="150" width="150" height="60" rx="5" ry="5" class="box" />
-                            <text x="215" y="180" class="small-text">Sources de</text>
-                            <text x="215" y="195" class="small-text">l'application</text>
+                            <rect x="140" y="130" width="150" height="60" rx="5" ry="5" class="box" />
+                            <text x="215" y="160" class="small-text">Sources de</text>
+                            <text x="215" y="175" class="small-text">l'application</text>
 
-                            <rect x="320" y="150" width="150" height="60" rx="5" ry="5" class="box" />
-                            <text x="395" y="180" class="small-text">Scripts</text>
+                            <rect x="320" y="130" width="150" height="60" rx="5" ry="5" class="box" />
+                            <text x="395" y="160" class="small-text">Scripts</text>
 
-                            <rect x="500" y="150" width="150" height="60" rx="5" ry="5" class="box" />
-                            <text x="575" y="180" class="small-text">Ressources</text>
-                            <text x="575" y="195" class="small-text">(images, license.txt)</text>
+                            <rect x="500" y="130" width="150" height="60" rx="5" ry="5" class="box" />
+                            <text x="575" y="160" class="small-text">Ressources</text>
+                            <text x="575" y="175" class="small-text">(images, license.txt)</text>
 
                             <!-- Flèches indiquant la composition interne -->
-                            <line x1="400" y1="115" x2="215" y2="150" class="connector" />
-                            <line x1="400" y1="115" x2="395" y2="150" class="connector" />
-                            <line x1="400" y1="115" x2="575" y2="150" class="connector" />
+                            <line x1="400" y1="95" x2="215" y2="130" class="connector" />
+                            <line x1="400" y1="95" x2="395" y2="130" class="connector" />
+                            <line x1="400" y1="95" x2="575" y2="130" class="connector" />
 
                             <!-- Flux de l'installation / configuration -->
-                            <line x1="400" y1="280" x2="400" y2="310" class="arrow" />
-                            <text x="400" y="295" class="small-text" style="text-anchor: middle;">Lance la
+                            <line x1="400" y1="260" x2="400" y2="290" class="arrow" />
+                            <text x="400" y="275" class="small-text" style="text-anchor: middle;">Lance la
                                 configuration</text>
 
                             <!-- Point de décision : Choix de l'installation et fournisseur d'identité -->
-                            <rect x="250" y="320" width="300" height="70" rx="10" ry="10" class="decision-box" />
-                            <text x="400" y="340" class="text">Choix de l'installation et</text>
-                            <text x="400" y="360" class="text">du fournisseur d'identité</text>
+                            <rect x="250" y="300" width="300" height="70" rx="10" ry="10" class="decision-box" />
+                            <text x="400" y="320" class="text">Choix : Installer Identity</text>
+                            <text x="400" y="340" class="text">Provisioning ou Federation,</text>
+                            <text x="400" y="360" class="text">ou configurer un IdP externe ?</text>
 
                             <!-- Options de choix (les 3 installateurs / IDP) -->
                             <!-- Installer Identity Provisioning -->
-                            <line x1="300" y1="390" x2="200" y2="430" class="arrow" />
-                            <text x="275" y="275" class="small-text" transform="rotate(-30 275 275)">Installer
-                                Federation</text>
-                            <rect x="100" y="300" width="300" height="70" rx="10" ry="10" class="main-box" />
-                            <text x="250" y="335" class="text">Installateur Federation</text>
+                            <line x1="300" y1="370" x2="200" y2="400" class="arrow" />
+                            <rect x="100" y="400" width="200" height="70" rx="5" ry="5" class="installer-box" />
+                            <text x="200" y="435" class="text">Installateur</text>
+                            <text x="200" y="450" class="text">Identity Provisioning</text>
 
                             <!-- IDP Externe -->
-                            <line x1="400" y1="390" x2="400" y2="430" class="arrow" />
-                            <rect x="325" y="430" width="150" height="100" rx="5" ry="5" class="box" />
-                            <text x="400" y="470" class="text">IDP Externe</text>
+                            <line x1="400" y1="370" x2="400" y2="400" class="arrow" />
+                            <rect x="325" y="400" width="150" height="70" rx="5" ry="5" class="box" />
+                            <text x="400" y="435" class="text">IdP Externe</text>
 
                             <!-- Installer Federation -->
-                            <line x1="500" y1="390" x2="600" y2="430" class="arrow" />
-                            <rect x="500" y="430" width="200" height="100" rx="5" ry="5" class="installer-box" />
-                            <text x="600" y="460" class="text">Installateur</text>
-                            <text x="600" y="475" class="text">Federation</text>
-                            <text x="600" y="500" class="small-text">(Sources, Scripts, Ressources)</text>
+                            <line x1="500" y1="370" x2="600" y2="400" class="arrow" />
+                            <rect x="500" y="400" width="200" height="70" rx="5" ry="5" class="installer-box" />
+                            <text x="600" y="435" class="text">Installateur</text>
+                            <text x="600" y="450" class="text">Federation</text>
 
                         </svg>
 
@@ -303,13 +282,11 @@
                             de retour) et
                             une journalisation complète du processus pour assurer sa fiabilité. J'ai également veillé à
                             la sécurité des données, en assurant que les mots de passe soient stockés correctement et ne
-                            soient jamais affichés en clair. J'ai étudié les architectures des API (Application
-                            Programming Interface) REST (Representational State Transfer) et leur documentation grâce à
+                            soient jamais affichés en clair. J'ai étudié les architectures des API (Application Programming Interface) REST (Representational State Transfer) et leur documentation grâce à
                             l'utilisation de Swagger.</li>
                         <li>J'ai mis en œuvre une stratégie de tests rigoureuse pour valider la qualité de
                             l'installateur. J'ai effectué de nombreux tests de prérequis (vérification de
-                            l'environnement .NET (Dot NET), de l'architecture, du module de réécriture d'URL (Uniform
-                            Resource Locator) d'IIS (Internet Information Services)) et des tests sur les données (tests
+                            l'environnement .NET, de l'architecture, du module de réécriture d'URL (Uniform Resource Locator) d'IIS (Internet Information Services)) et des tests sur les données (tests
                             des comptes de services via des requêtes vers l'AD (Active Directory), tests de connexion
                             aux bases de données, etc.) pour renforcer la sécurité.</li>
                         <ul>Pour connaître le fonctionnement et l'architectures des diverses applications, j'ai d'abord
@@ -351,26 +328,24 @@
 
                     <figure class="svg-trace">
                         <img src="img/c2-1.png"
-                            alt="Capture d'écran de code Python illustrant l'optimisation par exécution à plusieurs fils d'exécution">
-                        <figcaption>Trace 2.1 : Extrait de code Python illustrant l'utilisation de l'exécution à
-                            plusieurs fils pour ne pas bloquer l'interface graphique.
+                            alt="Capture d'écran de code Python illustrant l'optimisation par multithreading">
+                        <figcaption>Trace 2.1 : Extrait de code Python illustrant l'utilisation du multithreading pour ne pas bloquer l'interface graphique.
                         </figcaption>
                     </figure>
 
                     <figure class="svg-trace">
                         <img src="img/c2-2.png"
-                            alt="Capture d'écran de code Python illustrant l'optimisation par exécution à plusieurs fils d'exécution">
-                        <figcaption>Trace 2.2 : Extrait de code Python illustrant l'utilisation de l'exécution à
-                            plusieurs fils pour une génération de données optimisée.
+                            alt="Capture d'écran de code Python illustrant l'optimisation par multithreading">
+                        <figcaption>Trace 2.2 : Extrait de code Python illustrant l'utilisation du multithreading pour une génération de données optimisée.
                         </figcaption>
                     </figure>
                      <h6>Présentation</h6>
                     <p>Ces traces illustrent l'implémentation de techniques d'optimisation avancées pour un générateur de
                         données en Python. La Trace 2.1 montre comment l'application principale lance la tâche de
-                        génération dans un fil d'exécution (thread) séparé, garantissant ainsi la réactivité de
+                        génération dans un thread séparé, garantissant ainsi la réactivité de
                         l'interface utilisateur (UI). La Trace 2.2 détaille l'algorithme sous-jacent, divisant le
-                        travail en plusieurs fils d'exécution pour accélérer significativement le traitement de grands
-                        volumes de données.</p>
+                        travail en plusieurs threads pour accélérer significativement le traitement de grands
+                        volumess de données.</p>
 
                     <h6>Savoirs mobilisés :</h6>
                     <ul>
@@ -380,8 +355,8 @@
                             données.</li>
                         <li>L'optimisation des applications pour des traitements à forte intensité de calcul et la
                             garantie de la réactivité de l'interface utilisateur repose sur l'emploi de techniques
-                            algorithmiques avancées, telles que l'exécution à plusieurs fils d'exécution
-                            (multithreading) et l'utilisation de pools de fils d'exécution (`ThreadPoolExecutor`) pour
+                            algorithmiques avancées, telles que le multithreading
+                            et l'utilisation de pools de threads (`ThreadPoolExecutor`) pour
                             la parallélisation des opérations.</li>
                         <li>La sécurisation des données et du code est un enjeu majeur du développement logiciel,
                             impliquant la protection des informations sensibles (par exemple, les mots de passe) et la
@@ -398,10 +373,10 @@
                             organisations, métiers, etc.), avant de les exporter dans un format CSV (Comma Separated Values)
                             pour une utilisation ultérieure avec le moteur de provisionnement.</li>
                         <li>J'ai optimisé un programme Python dédié à la génération d'utilisateurs en y intégrant
-                            l'exécution à plusieurs fils d'exécution (multithreading). J'ai conçu la logique pour
-                            lancer la tâche de génération dans un fil d'exécution séparé (`threading.Thread`) afin de
+                            le multithreading. J'ai conçu la logique pour
+                            lancer la tâche de génération dans un thread séparé (`threading.Thread`) afin de
                             garantir la réactivité de l'interface utilisateur (Trace 2.1). De plus, j'ai structuré le
-                            processus de génération en utilisant un pool de fils d'exécution
+                            processus de génération en utilisant un pool de threads
                             (`concurrent.futures.ThreadPoolExecutor`) afin de diviser le travail en plusieurs blocs
                             (chunks) et de les traiter en parallèle (Trace 2.2), ce qui a considérablement amélioré les
                             performances, permettant de générer des centaines de milliers, voire des millions
@@ -409,10 +384,10 @@
                         <li>J'ai mis en œuvre des mesures pour garantir la sécurisation des données en veillant à ce que
                             les mots de passe soient stockés de manière appropriée et ne soient jamais affichés en clair
                             par le programme. J'ai également renforcé la sécurité des installateurs par l'exécution de
-                            nombreux tests de prérequis (environnements .NET (Dot NET), architectures, modules de
-                            réécriture d'URL (Uniform Resource Locator) d'IIS (Internet Information Services)) et des
+                            nombreux tests de prérequis (environnements .NET, architectures, modules de
+                            réécriture d'URL d'IIS) et des
                             tests sur les données, tels que la vérification des comptes de services via des requêtes
-                            vers l'AD (Active Directory) et la validation des connexions aux bases de données.</li>
+                            vers l'AD et la validation des connexions aux bases de données.</li>
                         <li>Savoir-faire non mis en oeuvre</li>
                     </ul>
                     <!-- NOUVEAU BOUTON -->
@@ -428,7 +403,6 @@
                     alt="Illustration administration de systèmes informatiques communicants complexes">
                 <div class="card-preview">
                     <h3>Administrer des systèmes informatiques communicants complexes</h3>
-                    <p class="subtitle">Compétence 3</p>
                 </div>
                 <div class="expanded-content">
                     <h4>Détails de la compétence :</h4>
@@ -603,22 +577,21 @@
                             l'intégration des fournisseurs d'identité.</figcaption>
                     </figure>
                     <h6>Présentation</h6>
-                    <p>Cette trace représente le flux de données entre l'installateur Identity et l'API (Application
-                        Programming Interface) du fournisseur d'identités. Les données transmises sont sous format JSON
+                    <p>Cette trace représente le flux de données entre l'installateur Identity et l'API du fournisseur d'identités. Les données transmises sont sous format JSON
                         puis traitées à l'aide de scripts PowerShell et librairie dédiées.</p>
                     <h6>Savoirs mobilisés :</h6>
                     <ul>
                         <li>Le développement d'applications communicantes exige la compréhension des protocoles
-                            d'échange de données (comme le format JSON (JavaScript Object Notation)) et la capacité à
-                            interagir avec des services externes via des API (Application Programming Interface) pour
+                            d'échange de données (comme le format JSON) et la capacité à
+                            interagir avec des services externes via des API pour
                             des flux d'information complexes.</li>
                         <li>L'utilisation de machines
                             virtuelles (VMs) pour des environnements de développement, de test et de production sont
                             utiles, notamment lorsqu'il faut créer de nombreuses machines afin d'avoir une maquette
-                            multi-machines réalistes avec une base de données décentralisée, un Active Directory ou
+                            multi-machines réalistes avec une base de données décentralisée, un Active Directory (AD) ou
                             encore un contrôlleur de domaine.</li>
                         <li>La sécurisation des systèmes complexes implique une connaissance approfondie des
-                            environnements (AD (Active Directory), IIS (Internet Information Services)), des mécanismes
+                            environnements (AD, IIS), des mécanismes
                             de gestion des certificats, du réseau, et de l'analyse des journaux (logs) pour le
                             diagnostic et la détection d'incidents.</li>
                     </ul>
@@ -627,21 +600,20 @@
                     <ul>
                         <li>J'ai développé une fonctionnalité permettant à l'installateur d'envoyer des requêtes à un
                             Identity Provider (IdP) pour récupérer dynamiquement des informations essentielles, telles
-                            que des jetons et des points de terminaison, au format JSON (JavaScript Object Notation).
+                            que des jetons et des points de terminaison, au format JSON.
                             Cela démontre ma capacité à créer des applications interopérables et communicantes. J'ai
-                            également étudié en profondeur les architectures des API (Application Programming Interface)
-                            d'Identity
-                            REST (Representational State Transfer) et leur documentation via Swagger.</li>
+                            également étudié en profondeur les architectures des API
+                            REST et leur documentation via Swagger.</li>
                         <li>J'ai acquis une bonne familiarisation avec l'utilisation des machines virtuelles (VMs) sous
                             Windows Server, un environnement que j'ai utilisé pour le développement, les tests et la
                             validation de l'installateur et des solutions logicielles, démontrant ainsi ma capacité à
                             travailler dans des environnements virtualisés et de les faire fonctionner ensemble.</li>
-                        <li>J'ai acquis une familiarisation approfondie avec divers environnements Microsoft (AD (Active
-                            Directory), Azure, Teams, IIS (Internet Information Services), PowerShell, certificats,
+                        <li>J'ai acquis une familiarisation approfondie avec divers environnements Microsoft (AD,
+                            Azure, Teams, IIS (Internet Information Services), PowerShell, certificats,
                             domaines, réseau, observateur d'événements). J'ai également appris à analyser des journaux
                             (logs) Hangfire ou des journaux réseau avancés dans la console pour diagnostiquer et
                             résoudre des problèmes. De plus, j'ai rédigé un article Confluence, documentant la création
-                            et l'utilisation de certificats auto-signés avec IIS (Internet Information Services), ce qui
+                            et l'utilisation de certificats auto-signés avec IIS, ce qui
                             témoigne de ma capacité à mettre en œuvre et à documenter des pratiques de sécurisation.
                         </li>
                     </ul>
@@ -852,8 +824,7 @@
                             informations sensibles et des validations rigoureuses de leur exactitude.</li>
                         <li>AC 3 non abordée.</li>
                         <li>La manipulation et l'intégration de données provenant de sources et de formats divers (par
-                            exemple, des données générées, des données de systèmes externes, des fichiers CSV (Comma
-                            Separated Values)) sont des compétences essentielles pour la préparation et l'analyse de
+                            exemple, des données générées, des données de systèmes externes, des fichiers CSV) sont des compétences essentielles pour la préparation et l'analyse de
                             jeux de données complexes.</li>
                     </ul>
 
@@ -866,14 +837,14 @@
                         <li>J'ai mis en place des mesures garantissant la confidentialité des données en assurant que
                             les mots de passe soient stockés de manière sécurisée et ne soient jamais affichés en clair
                             par l'installateur. J'ai également réalisé des tests sur les données, comme la vérification
-                            des comptes de services via des requêtes vers l'AD (Active Directory) et les tests de
+                            des comptes de services via des requêtes vers l'AD et les tests de
                             connexion aux bases de données, afin de valider leur intégrité et leur sécurité.</li>
                         <li>Savoir-faire non mis en œuvre.</li>
                         <li>J'ai conçu et développé un programme en Python, utilisant la bibliothèque Faker, pour
                             générer un grand nombre d'utilisateurs avec des attributs variés et cohérents (rôles,
                             période d'embauche, hiérarchie, organisations, métiers). J'ai ensuite manipulé ces données
                             hétérogènes en les structurant dans des Dataframes Pandas et en les
-                            exportant dans des fichiers CSV (Comma Separated Values), pour être utilisés par le moteur
+                            exportant dans des fichiers CSV, pour être utilisés par le moteur
                             de provisionnement, démontrant ma capacité à préparer et à transformer des données pour des
                             systèmes tiers.</li>
                     </ul>
@@ -907,8 +878,8 @@
                         <li>La formalisation des besoins des clients et des utilisateurs est une étape cruciale en
                             gestion de projet, nécessitant une écoute active pour capter les exigences initiales et une
                             adaptabilité pour gérer les évolutions.</li>
-                        <li>*Aucune information explicite n'est fournie concernant l'identification des critères de
-                            faisabilité d'un projet informatique.* </li>
+                        <li>La connaissance des méthodes d'estimation de la charge de travail et leur rôle dans l'identification
+                            des critères de faisabilité d'un projet informatique (délais, ressources, coûts).</li>
                         <li>Un suivi de projet efficace implique l'utilisation d'outils de gestion des tâches et des
                             incidents, une communication transparente sur l'avancement et la capacité à estimer les
                             charges de travail.</li>
@@ -928,8 +899,8 @@
                         <li>Lors des réunions quotidiennes (stand-ups), j'ai pu estimer les charges de
                             travail des différentes tâches, contribuant ainsi à l'évaluation continue de la faisabilité
                             du projet et à l'ajustement des tâches prévues.</li>
-                        <li>J'ai utilisé le système de tickets d'Azure DevOps (incluant la gestion des bogues (bugs),
-                            des récits utilisateurs (user story) et des fonctionnalités (features)) pour le suivi du
+                        <li>J'ai utilisé le système de tickets d'Azure DevOps (incluant la gestion des bogues,
+                            des user story et des features) pour le suivi du
                             projet, ce qui m'a permis de développer ma concision et ma précision dans la rédaction des
                             tickets. J'ai également participé activement aux stand-ups quotidiens pour estimer les
                             charges de travail et rendre compte de mon activité, contribuant ainsi à une démarche de
@@ -976,7 +947,7 @@
 
                     <h6>Savoir-faire mis en œuvre :</h6>
                     <ul>
-                        <li>J'ai appris et appliqué l'utilisation du système de demandes de tirage (pull request), un
+                        <li>J'ai appris et appliqué l'utilisation du pull request, un
                             mécanisme clé de collaboration sur le code, ce qui m'a permis de m'intégrer et de contribuer
                             efficacement aux processus de développement de l'équipe.</li>
                         <li>J'ai activement communiqué avec les membres de mon équipe, notamment en transmettant les
@@ -986,10 +957,9 @@
                         <li>J'ai régulièrement rendu compte de mon activité professionnelle lors des stand-ups
                             quotidiennes, incluant l'estimation des charges de travail. J'ai également contribué à la
                             documentation interne en rédigeant un article Confluence destiné aux équipes, détaillant la
-                            création et l'utilisation de certificats auto-signés avec IIS (Internet Information
-                            Services), ce qui démontre ma capacité à documenter et à partager mes travaux. Ma capacité à
+                            création et l'utilisation de certificats auto-signés avec IIS, ce qui démontre ma capacité à documenter et à partager mes travaux. Ma capacité à
                             être concis et précis dans la rédaction des tickets Azure DevOps (bogues, user story,
-                            fonctionnalités, etc.) a également amélioré la compréhension
+                            features, etc.) a également amélioré la compréhension
                             mutuelle au sein de l'équipe.</li>
                     </ul>
                     <!-- NOUVEAU BOUTON -->
