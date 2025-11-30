@@ -1,19 +1,19 @@
 <div class="container">
-  <h2>Mes Projets</h2>
+  <h2>{{ 'PROJECTS.TITLE' | translate }}</h2>
   <div class="projects-grid">
     <mat-card *ngFor="let project of projects" class="project-card">
-      <img mat-card-image [src]="project.image" [alt]="project.title">
+      <img mat-card-image [src]="project.image" [alt]="project.title | translate">
       <mat-card-header>
-        <mat-card-title>{{ project.title }}</mat-card-title>
+        <mat-card-title>{{ project.title | translate }}</mat-card-title>
       </mat-card-header>
       <mat-card-content>
-        <p>{{ project.description }}</p>
+        <p>{{ project.description | translate }}</p>
         <mat-chip-set aria-label="Technologies">
           <mat-chip *ngFor="let tech of project.technos">{{ tech }}</mat-chip>
         </mat-chip-set>
       </mat-card-content>
       <mat-card-actions>
-        <a mat-button color="primary" [href]="project.link" target="_blank">VOIR LE CODE</a>
+        <a mat-button color="primary" [href]="project.link" target="_blank">{{ 'PROJECTS.VIEW_CODE' | translate }}</a>
       </mat-card-actions>
     </mat-card>
   </div>

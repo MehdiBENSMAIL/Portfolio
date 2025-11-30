@@ -3,17 +3,29 @@
   <span class="spacer"></span>
 
   <div class="nav-links">
-    <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Accueil</a>
-    <a mat-button routerLink="/projects" routerLinkActive="active-link">Projets</a>
-    <a mat-button routerLink="/skills" routerLinkActive="active-link">Compétences</a>
-    <a mat-button routerLink="/contact" routerLinkActive="active-link">Contact</a>
+    <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">{{ 'HEADER.HOME' | translate }}</a>
+    <a mat-button routerLink="/projects" routerLinkActive="active-link">{{ 'HEADER.PROJECTS' | translate }}</a>
+    <a mat-button routerLink="/skills" routerLinkActive="active-link">{{ 'HEADER.SKILLS' | translate }}</a>
+    <a mat-button routerLink="/contact" routerLinkActive="active-link">{{ 'HEADER.CONTACT' | translate }}</a>
+
+    <button mat-icon-button [matMenuTriggerFor]="langMenu">
+      <span style="font-size: 1.5rem;">{{ translationService.lang() === 'fr' ? '🇫🇷' : '🇬🇧' }}</span>
+    </button>
+    <mat-menu #langMenu="matMenu">
+      <button mat-menu-item (click)="switchLanguage('fr')">
+        <span>🇫🇷 Français</span>
+      </button>
+      <button mat-menu-item (click)="switchLanguage('en')">
+        <span>🇬🇧 English</span>
+      </button>
+    </mat-menu>
 
     <button mat-icon-button (click)="themeService.toggleTheme()">
       <mat-icon>{{ (themeService.isDarkMode$ | async) ? 'light_mode' : 'dark_mode' }}</mat-icon>
     </button>
 
     <a mat-raised-button color="accent" href="assets/mon_cv.pdf" target="_blank" class="cv-btn">
-      Mon CV
+      {{ 'HEADER.CV' | translate }}
     </a>
   </div>
 </mat-toolbar>

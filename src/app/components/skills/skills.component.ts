@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
+import { TranslatePipe } from '../../pipes/translate.pipe';
 
 @Component({
   selector: 'app-skills',
@@ -14,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatProgressBarModule,
     MatChipsModule,
     MatIconModule,
+    TranslatePipe
   ],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss',
@@ -27,9 +29,9 @@ export class SkillsComponent {
   ];
 
   softSkills = [
-    'Gestion de projet (Agile)',
-    'Travail en équipe',
-    'Autonomie',
-    'Résolution de problèmes',
+    'SKILLS.SOFT.AGILE',
+    'SKILLS.SOFT.TEAMWORK',
+    'SKILLS.SOFT.AUTONOMY',
+    'SKILLS.SOFT.PROBLEM_SOLVING',
   ];
 }

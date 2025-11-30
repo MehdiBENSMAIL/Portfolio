@@ -1,10 +1,10 @@
 <div class="container">
-    <h2>Mes Compétences</h2>
+    <h2>{{ 'SKILLS.TITLE' | translate }}</h2>
 
     <div class="skills-layout">
         <mat-card class="skill-card">
             <mat-card-header>
-                <mat-card-title>Techniques</mat-card-title>
+                <mat-card-title>{{ 'SKILLS.TECHNICAL' | translate }}</mat-card-title>
             </mat-card-header>
             <mat-card-content>
                 <div *ngFor="let skill of hardSkills" class="skill-item">
@@ -19,13 +19,13 @@
 
         <mat-card class="skill-card">
             <mat-card-header>
-                <mat-card-title>Soft Skills & Outils</mat-card-title>
+                <mat-card-title>{{ 'SKILLS.SOFT_TOOLS' | translate }}</mat-card-title>
             </mat-card-header>
             <mat-card-content>
                 <mat-chip-set>
                     <mat-chip *ngFor="let soft of softSkills" color="accent" highlighted>
                         <mat-icon matChipAvatar>check</mat-icon>
-                        {{ soft }}
+                        {{ soft | translate }}
                     </mat-chip>
                 </mat-chip-set>
             </mat-card-content>
