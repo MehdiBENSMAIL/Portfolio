@@ -1,0 +1,37 @@
+.home-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    flex-wrap: wrap; // Responsive mobile
+}
+
+.text-content {
+    flex: 1;
+    min-width: 300px;
+
+    h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .highlight {
+        color: #ffab40;
+        /* Orange accent approx */
+    }
+
+    .intro-text {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        max-width: 600px;
+        margin-bottom: 2rem;
+    }
+}
+
+.profile-pic {
+    max-width: 300px;
+    border-radius: 50%;
+    /* Ou carré arrondi selon ton goût */
+    box-shadow: 10px 10px 0px var(--mat-sys-primary);
+    /* Effet décalé graphique */
+}

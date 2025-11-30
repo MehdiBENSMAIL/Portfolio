@@ -1,0 +1,19 @@
+<mat-toolbar color="primary" class="navbar">
+  <span>Mon Portfolio</span>
+  <span class="spacer"></span>
+
+  <div class="nav-links">
+    <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Accueil</a>
+    <a mat-button routerLink="/projects" routerLinkActive="active-link">Projets</a>
+    <a mat-button routerLink="/skills" routerLinkActive="active-link">Compétences</a>
+    <a mat-button routerLink="/contact" routerLinkActive="active-link">Contact</a>
+
+    <button mat-icon-button (click)="themeService.toggleTheme()">
+      <mat-icon>{{ (themeService.isDarkMode$ | async) ? 'light_mode' : 'dark_mode' }}</mat-icon>
+    </button>
+
+    <a mat-raised-button color="accent" href="assets/mon_cv.pdf" target="_blank" class="cv-btn">
+      Mon CV
+    </a>
+  </div>
+</mat-toolbar>

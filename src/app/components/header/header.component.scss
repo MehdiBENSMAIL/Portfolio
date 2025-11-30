@@ -1,0 +1,44 @@
+/* src/app/components/header/header.component.scss */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* On s'assure que la navbar elle-même gère bien l'espace */
+  display: flex;
+  align-items: center;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* C'est ici qu'on corrige l'alignement et l'espacement */
+.nav-links {
+  display: flex;
+  /* Active le mode flexible */
+  align-items: center;
+  /* Centre verticalement TOUS les éléments (Textes + Icônes) */
+  gap: 16px;
+  /* Ajoute 16px d'espace entre chaque élément (Contact <-> Lune) */
+  height: 100%;
+}
+
+/* Style des liens */
+a[mat-button] {
+  /* Optionnel : ajuste la hauteur de ligne si nécessaire */
+  line-height: 36px;
+}
+
+.active-link {
+  background: rgba(255, 255, 255, 0.1);
+  font-weight: bold;
+  border-radius: 4px;
+  /* Rend le fond gris "pill" plus joli */
+}
+
+/* Si tu veux éloigner un peu plus spécifiquement le bouton CV du reste */
+.cv-btn {
+  margin-left: 8px;
+}

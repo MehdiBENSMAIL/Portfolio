@@ -1,0 +1,15 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grille responsive */
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.project-card {
+  transition: transform 0.3s;
+  &:hover {
+    transform: translateY(-5px); /* Petit effet interactif */
+  }
+}
+mat-card-content { margin-top: 1rem; }
+mat-chip-set { margin-top: 1rem; }

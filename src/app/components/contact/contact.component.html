@@ -1,0 +1,27 @@
+<div class="container contact-section">
+    <h2>Me Contacter</h2>
+    <p>Une question ou une proposition de stage ? N'hésitez pas !</p>
+
+    <!-- Formulaire compatible GitHub Pages via Formspree -->
+    <form [action]="formActionUrl" method="POST" class="contact-form">
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Votre Nom</mat-label>
+            <input matInput name="name" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Votre Email</mat-label>
+            <input matInput type="email" name="email" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Message</mat-label>
+            <textarea matInput name="message" rows="5" required></textarea>
+        </mat-form-field>
+
+        <button mat-flat-button color="primary" type="submit">
+            <mat-icon>send</mat-icon> ENVOYER
+        </button>
+    </form>
+</div>

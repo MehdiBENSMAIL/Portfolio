@@ -1,0 +1,95 @@
+/* DEFINITION DES VARIABLES DE COULEURS */
+:root {
+    /* Mode CLAIR (Par défaut) */
+    --bg-body: #f5f5f5;
+    --text-primary: rgba(0, 0, 0, 0.87);
+    --text-secondary: rgba(0, 0, 0, 0.6);
+    --card-bg: #ffffff;
+    --input-bg: #ffffff;
+    --title-border: #ffab40;
+    /* Orange */
+}
+
+/* Mode SOMBRE (S'active quand le body a la classe dark-mode) */
+body.dark-mode {
+    --bg-body: #121212;
+    /* Fond très sombre (Standard Material) */
+    --text-primary: #e0e0e0;
+    /* Blanc cassé pour ne pas brûler les yeux */
+    --text-secondary: #b0b0b0;
+    --card-bg: #1e1e1e;
+    /* Gris foncé pour les cartes */
+    --input-bg: #2c2c2c;
+
+    /* On force l'override des composants Material en mode dark */
+    .mat-mdc-card {
+        background-color: var(--card-bg) !important;
+        color: var(--text-primary) !important;
+    }
+
+    /* Ajustement des champs de formulaire en dark mode */
+    .mat-mdc-form-field-input-control {
+        color: var(--text-primary) !important;
+    }
+
+    .mdc-text-field {
+        background-color: var(--input-bg) !important;
+        color: var(--text-primary) !important;
+    }
+
+    /* Couleur des icones */
+    .mat-icon {
+        color: var(--text-primary);
+    }
+}
+
+/* APPLICATION DES VARIABLES */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Transition douce */
+
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+}
+
+.container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 3px solid var(--title-border);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Style des cartes utilisant les variables */
+.mat-mdc-card {
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Petite ombre légère */
+}
+
+.mat-mdc-card-content p {
+    color: var(--text-secondary);
+    margin-top: 10px;
+}
+
+/* Skills : Labels */
+.skill-item .label span {
+    color: var(--text-primary) !important;
+}

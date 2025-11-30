@@ -1,0 +1,34 @@
+<div class="container">
+    <h2>Mes Compétences</h2>
+
+    <div class="skills-layout">
+        <mat-card class="skill-card">
+            <mat-card-header>
+                <mat-card-title>Techniques</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div *ngFor="let skill of hardSkills" class="skill-item">
+                    <div class="label">
+                        <span>{{ skill.name }}</span>
+                        <span>{{ skill.level }}%</span>
+                    </div>
+                    <mat-progress-bar mode="determinate" [value]="skill.level" color="primary"></mat-progress-bar>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card class="skill-card">
+            <mat-card-header>
+                <mat-card-title>Soft Skills & Outils</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-chip-set>
+                    <mat-chip *ngFor="let soft of softSkills" color="accent" highlighted>
+                        <mat-icon matChipAvatar>check</mat-icon>
+                        {{ soft }}
+                    </mat-chip>
+                </mat-chip-set>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
