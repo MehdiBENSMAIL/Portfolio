@@ -57,7 +57,7 @@ export class HeaderComponent {
   }
 
   get resumeLink(): string {
-    // TODO: Replace the English path with '/assets/CV_mbs_en.pdf' when the file is available
-    return this.translationService.lang() === 'en' ? '/assets/files/CV_mbs_en.pdf' : '/assets/files/CV_mbs.pdf';
+    // TODO: Replace the English path with 'assets/files/CV_mbs_en.pdf' when the file is available
+    return this.translationService.lang() === 'en' ? 'assets/files/CV_mbs.pdf' : 'assets/files/CV_mbs.pdf';
   }
 }
