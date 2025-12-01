@@ -1,30 +1,37 @@
 <mat-toolbar color="primary" class="navbar">
-  <span>Mon Portfolio</span>
+  <span routerLink="/" class="logo">Portfolio Mehdi BEN SMAIL</span>
   <span class="spacer"></span>
 
-  <div class="nav-links">
-    <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">{{ 'HEADER.HOME' | translate }}</a>
-    <a mat-button routerLink="/projects" routerLinkActive="active-link">{{ 'HEADER.PROJECTS' | translate }}</a>
-    <a mat-button routerLink="/skills" routerLinkActive="active-link">{{ 'HEADER.SKILLS' | translate }}</a>
-    <a mat-button routerLink="/contact" routerLinkActive="active-link">{{ 'HEADER.CONTACT' | translate }}</a>
+  <button mat-icon-button class="burger-menu" (click)="toggleMenu()" aria-label="Toggle menu">
+    <mat-icon>menu</mat-icon>
+  </button>
 
-    <button mat-icon-button [matMenuTriggerFor]="langMenu">
-      <span style="font-size: 1.5rem;">{{ translationService.lang() === 'fr' ? '🇫🇷' : '🇬🇧' }}</span>
-    </button>
-    <mat-menu #langMenu="matMenu">
-      <button mat-menu-item (click)="switchLanguage('fr')">
-        <span>🇫🇷 Français</span>
-      </button>
-      <button mat-menu-item (click)="switchLanguage('en')">
-        <span>🇬🇧 English</span>
-      </button>
-    </mat-menu>
+  <div class="nav-links" [class.open]="isMenuOpen">
+    <a mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">{{
+      'HEADER.HOME' | translate }}</a>
+    <a mat-button routerLink="/projects" routerLinkActive="active-link" (click)="closeMenu()">{{ 'HEADER.PROJECTS' | translate }}</a>
+    <a mat-button routerLink="/skills" routerLinkActive="active-link" (click)="closeMenu()">{{ 'HEADER.SKILLS' | translate }}</a>
+    <a mat-button routerLink="/contact" routerLinkActive="active-link" (click)="closeMenu()">{{ 'HEADER.CONTACT' | translate }}</a>
 
-    <button mat-icon-button (click)="themeService.toggleTheme()">
-      <mat-icon>{{ (themeService.isDarkMode$ | async) ? 'light_mode' : 'dark_mode' }}</mat-icon>
-    </button>
+    <div class="controls">
+        <button mat-icon-button [matMenuTriggerFor]="langMenu" aria-label="Change language">
+          <span style="font-size: 1.5rem;">{{ translationService.lang() === 'fr' ? '🇫🇷' : '🇬🇧' }}</span>
+        </button>
+        <mat-menu #langMenu="matMenu">
+          <button mat-menu-item (click)="switchLanguage('fr'); closeMenu()">
+            <span>🇫🇷 Français</span>
+          </button>
+          <button mat-menu-item (click)="switchLanguage('en'); closeMenu()">
+            <span>🇬🇧 English</span>
+          </button>
+        </mat-menu>
 
-    <a mat-raised-button color="accent" href="assets/mon_cv.pdf" target="_blank" class="cv-btn">
+        <button mat-icon-button (click)="themeService.toggleTheme(); closeMenu()" aria-label="Toggle theme">
+          <mat-icon>{{ (themeService.isDarkMode$ | async) ? 'light_mode' : 'dark_mode' }}</mat-icon>
+        </button>
+    </div>
+
+    <a mat-raised-button color="accent" [href]="resumeLink" target="_blank" class="cv-btn" (click)="closeMenu()">
       {{ 'HEADER.CV' | translate }}
     </a>
   </div>

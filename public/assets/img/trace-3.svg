@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <!-- Background -->
+  <rect width="800" height="300" fill="#f9f9f9" rx="10" ry="10"/>
+  
+  <!-- Styles -->
+  <style>
+    .box { fill: #ffffff; stroke: #2e7d32; stroke-width: 2px; rx: 5; ry: 5; }
+    .text { font-family: Arial, sans-serif; font-size: 14px; fill: #333; text-anchor: middle; }
+    .label { font-family: Arial, sans-serif; font-size: 12px; fill: #555; background-color: white; }
+    .arrow { stroke: #666; stroke-width: 2px; fill: none; marker-end: url(#arrowhead); }
+  </style>
+  
+  <!-- Markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Entities -->
+  <rect x="50" y="100" width="150" height="80" class="box"/>
+  <text x="125" y="145" class="text">Identity Installer</text>
+  
+  <rect x="600" y="100" width="150" height="80" class="box"/>
+  <text x="675" y="145" class="text">Identity Provider (API)</text>
+
+  <!-- Interactions -->
+  <!-- Request -->
+  <path d="M 200 120 L 600 120" class="arrow"/>
+  <text x="400" y="110" class="text">HTTP GET /config (Request)</text>
+
+  <!-- Response -->
+  <path d="M 600 160 L 200 160" class="arrow"/>
+  <text x="400" y="185" class="text">JSON Response { tokens, endpoints... }</text>
+
+  <!-- Processing -->
+  <rect x="200" y="220" width="400" height="50" class="box" style="stroke: #e65100; stroke-dasharray: 4;"/>
+  <text x="400" y="240" class="text" style="font-weight:bold;">PowerShell Processing</text>
+  <text x="400" y="260" class="text">JSON Parsing & Configuration Logic</text>
+
+  <path d="M 125 180 L 125 245 L 200 245" class="arrow" style="fill:none; stroke-dasharray: 2;"/>
+
+</svg>

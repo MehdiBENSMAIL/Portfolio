@@ -13,11 +13,11 @@ import { TranslatePipe } from '../../pipes/translate.pipe';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    TranslatePipe
+    TranslatePipe,
   ],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-  formActionUrl = 'https://formspree.io/f/YOUR_FORM_ID'; // Remplace par ton ID Formspree
+  formActionUrl = 'https://formspree.io/f/xwpgpwwg';
 }

@@ -1,7 +1,13 @@
 <div class="container">
   <h2>{{ 'PROJECTS.TITLE' | translate }}</h2>
+
+  <!-- Grid of cards (Triggers) -->
   <div class="projects-grid">
-    <mat-card *ngFor="let project of projects" class="project-card">
+    <mat-card 
+      *ngFor="let project of projects" 
+      class="project-card"
+      (click)="openProject(project, $event)"
+    >
       <img mat-card-image [src]="project.image" [alt]="project.title | translate">
       <mat-card-header>
         <mat-card-title>{{ project.title | translate }}</mat-card-title>
@@ -13,8 +19,52 @@
         </mat-chip-set>
       </mat-card-content>
       <mat-card-actions>
-        <a mat-button color="primary" [href]="project.link" target="_blank">{{ 'PROJECTS.VIEW_CODE' | translate }}</a>
+        <a mat-button color="primary" [href]="project.link" target="_blank" (click)="$event.stopPropagation()" *ngIf="project.link">
+            {{ 'PROJECTS.VIEW_CODE' | translate }}
+        </a>
       </mat-card-actions>
     </mat-card>
   </div>
+
+  <!-- Expanded Card View (Clone) -->
+  <!-- The Overlay -->
+  <div class="overlay" [class.visible]="isExpanded" *ngIf="activeProject" (click)="closeProject()"></div>
+
+  <!-- The Animated Card -->
+  <mat-card 
+    class="project-card expanded-clone" 
+    *ngIf="activeProject"
+    [class.expanded-state]="isExpanded"
+    [style.top.px]="isExpanded ? null : initialRect?.top"
+    [style.left.px]="isExpanded ? null : initialRect?.left"
+    [style.width.px]="isExpanded ? null : initialRect?.width"
+    [style.height.px]="isExpanded ? null : initialRect?.height"
+  >
+      <button mat-icon-button class="close-btn" (click)="closeProject()">
+        <mat-icon>close</mat-icon>
+      </button>
+
+      <div class="scrollable-content">
+        <img mat-card-image [src]="activeProject.image" [alt]="activeProject.title | translate">
+        
+        <mat-card-header>
+            <mat-card-title>{{ activeProject.title | translate }}</mat-card-title>
+        </mat-card-header>
+        
+        <mat-card-content>
+            <!-- Detailed content -->
+            <div class="desc" [innerHTML]="(activeProject.fullDescription || activeProject.description) | translate"></div>
+            
+            <mat-chip-set aria-label="Technologies">
+            <mat-chip *ngFor="let tech of activeProject.technos">{{ tech }}</mat-chip>
+            </mat-chip-set>
+        </mat-card-content>
+      </div>
+      
+      <mat-card-actions>
+        <a mat-button color="primary" [href]="activeProject.link" target="_blank" *ngIf="activeProject.link">
+            {{ 'PROJECTS.VIEW_CODE' | translate }}
+        </a>
+      </mat-card-actions>
+  </mat-card>
 </div>

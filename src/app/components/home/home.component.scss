@@ -3,7 +3,26 @@
     align-items: center;
     justify-content: space-between;
     padding: 4rem 2rem;
-    flex-wrap: wrap; // Responsive mobile
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .home-section {
+        padding: 2rem 1rem;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .text-content {
+        margin-bottom: 2rem;
+    }
+    
+    .intro-text {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .text-content {
@@ -17,7 +36,6 @@
 
     .highlight {
         color: #ffab40;
-        /* Orange accent approx */
     }
 
     .intro-text {
@@ -31,7 +49,129 @@
 .profile-pic {
     max-width: 300px;
     border-radius: 50%;
-    /* Ou carré arrondi selon ton goût */
     box-shadow: 10px 10px 0px var(--mat-sys-primary);
-    /* Effet décalé graphique */
+}
+
+// --- TIMELINE STYLES ---
+.education-container {
+    width: 100%;
+    padding: 4rem 2rem;
+    
+    h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 30px; // Space for the line
+    border-left: 4px solid #e0e0e0; // The vertical line (light grey)
+
+    // For dark mode compatibility, relying on inherited colors or specific overrides
+    @media (prefers-color-scheme: dark) {
+        border-left-color: #424242;
+    }
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.timeline-dot {
+    position: absolute;
+    top: 20px; // Align with card title
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffab40; // Accent color
+    border: 4px solid white; // Border to separate from line
+    box-shadow: 0 0 0 2px #ffab40; // Optional outer ring
+    z-index: 2;
+    
+    // Adjustment for exact centering on the line
+    // Line center is at 2px (4px border / 2)
+    // Content starts at 34px (4px border + 30px padding)
+    // Distance to line center = -32px
+    // Dot total width = 28px (assuming content-box sizing or visual weight) -> Half = 14px
+    // Target left = -32px - 14px = -46px
+    left: -46px; 
+}
+
+.education-card {
+    width: 100%;
+    
+    mat-card-title {
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+    }
+    
+    mat-card-subtitle {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin-bottom: 0.5rem;
+    }
+    
+    p {
+        margin-top: 0.5rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 768px) {
+    .education-container {
+        padding: 2rem 0.5rem; /* Very small padding on sides to maximize space */
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .timeline {
+        margin-left: 0; /* Remove extra margin */
+        padding-left: 15px; /* Minimal space for line */
+        width: 100%; /* Ensure it fits */
+        box-sizing: border-box;
+    }
+    
+    .timeline-item {
+        padding-left: 1rem; /* Bring card closer to line */
+        padding-right: 0;
+        box-sizing: border-box;
+    }
+
+    .timeline-dot {
+         /* Line is at 15px (padding) + 4px (border) = center around 17px?
+            No, padding-left is space INSIDE timeline before content. Border is LEFT of timeline.
+            Wait, border-left is on .timeline. 
+            So line is at x=0 of .timeline.
+            Dot needs to be centered on x=0.
+            Dot width 20px + border 4px*2 = 28px. Center is 14px.
+            So left should be -14px relative to .timeline border.
+            But .timeline-item is INSIDE .timeline.
+            If .timeline-item is relative, left: -X is relative to .timeline-item's left edge.
+            .timeline-item padding-left is 1rem (16px).
+            Plus .timeline padding-left (15px).
+            Total distance from border to content start = 31px.
+            To reach center of border (0), we need left: -31px - (half dot width).
+            Let's simplify visually.
+         */
+         left: -32px; /* Adjusted for tighter spacing */
+    }
+    
+    .education-card {
+        width: auto; /* Let it shrink */
+        max-width: calc(100vw - 80px); /* 100% of viewport minus ~80px for timeline indentation and margins */
+        min-width: 0; /* Allow shrinking below content size if needed */
+        box-sizing: border-box;
+        display: block; /* Ensure standard block behavior */
+    }
 }

@@ -24,6 +24,8 @@ export class SkillsComponent {
   hardSkills = [
     { name: 'Angular / TypeScript', level: 80 },
     { name: 'HTML5 / SCSS', level: 90 },
+    { name: 'Python / OpenCV', level: 70 },
+    { name: 'ROS / Robotics', level: 65 },
     { name: 'Java / OOP', level: 70 },
     { name: 'Git / GitHub', level: 75 },
   ];
@@ -33,5 +35,9 @@ export class SkillsComponent {
     'SKILLS.SOFT.TEAMWORK',
     'SKILLS.SOFT.AUTONOMY',
     'SKILLS.SOFT.PROBLEM_SOLVING',
+    'SKILLS.SOFT.ADAPTABILITY',
+    'SKILLS.SOFT.CURIOSITY',
+    'SKILLS.SOFT.RIGOR',
+    'SKILLS.SOFT.COMMUNICATION',
   ];
 }

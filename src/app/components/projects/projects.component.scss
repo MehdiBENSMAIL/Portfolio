@@ -1,15 +1,160 @@
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grille responsive */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   padding: 2rem;
 }
 
 .project-card {
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--card-bg); // Ensure opaque background
+
   &:hover {
-    transform: translateY(-5px); /* Petit effet interactif */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   }
 }
-mat-card-content { margin-top: 1rem; }
+
+/* The Clone that animates */
+.expanded-clone {
+    position: fixed;
+    z-index: 1000;
+    margin: 0; /* Override material default margins */
+    box-shadow: 0 24px 48px rgba(0,0,0,0.5);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth easing */
+    display: flex;
+    flex-direction: column;
+    
+    /* Initial state uses inline styles (top/left/width/height) from TS */
+
+    .scrollable-content {
+        flex: 1;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(0,0,0,0.2);
+            border-radius: 4px;
+        }
+
+        > img {
+            height: 200px; // Consistent initial height
+            object-fit: cover;
+            transition: height 0.4s ease;
+        }
+    }
+
+    &.expanded-state {
+        /* Final state: Centered and large */
+        top: 50% !important;
+        left: 50% !important;
+        width: 90vw !important;
+        max-width: 800px !important;
+        height: auto !important;
+        max-height: 90vh !important;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+        
+        .scrollable-content > img {
+            height: 350px; // Grow image
+        }
+
+        .desc {
+            font-size: 1.1rem;
+            line-height: 1.6;
+
+            ::ng-deep {
+                h1, h2, h3, h4 {
+                    margin-top: 1.5rem;
+                    margin-bottom: 0.5rem;
+                    color: var(--text-primary); 
+                }
+                
+                h1 { 
+                    font-size: 1.8rem; 
+                    border-bottom: 2px solid var(--title-border, #ffab40); 
+                    padding-bottom: 0.5rem; 
+                }
+                h2 { font-size: 1.5rem; }
+                h3 { font-size: 1.3rem; color: var(--title-border, #ffab40); } // Accent color for H3
+
+                ul, ol {
+                    margin-bottom: 1rem;
+                    padding-left: 2rem;
+                    color: var(--text-primary);
+                }
+
+                li {
+                    margin-bottom: 0.5rem;
+                }
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 4px;
+                    margin: 1rem 0;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                }
+
+                blockquote {
+                    border-left: 4px solid #ccc;
+                    margin: 1rem 0;
+                    padding: 0.5rem 1rem;
+                    background: rgba(0,0,0,0.05);
+                    font-style: italic;
+                }
+
+                hr {
+                    border: 0;
+                    height: 1px;
+                    background: #ddd;
+                    margin: 2rem 0;
+                }
+            }
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+
+    &.visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border-radius: 50%;
+}
+
+mat-card-content { 
+    margin-top: 1rem; 
+    flex-grow: 1;
+}
+
 mat-chip-set { margin-top: 1rem; }
