@@ -67,7 +67,7 @@ export class TranslationService {
 </ul>
 
 <h3>Trace 1.1 : Architecture des Installateurs de Solutions Systancia</h3>
-<img src="/assets/img/trace-1-1.svg" alt="Diagramme illustrant l'installateur principal Identity">
+<img src="assets/img/trace-1-1.svg" alt="Diagramme illustrant l'installateur principal Identity">
 <blockquote><strong>Légende :</strong> Architecture simplifiée des installateurs Inno Setup pour les solutions liées à Systancia Identity.</blockquote>
 
 <h3>Présentation</h3>
@@ -106,12 +106,12 @@ export class TranslationService {
 
 <h3>Traces</h3>
 <ol>
-    <li><strong>Trace 2.1 :</strong> <img src="/assets/img/c2-1.png" alt="Capture d'écran de code Python illustrant l'optimisation par multithreading">
+    <li><strong>Trace 2.1 :</strong> <img src="assets/img/c2-1.png" alt="Capture d'écran de code Python illustrant l'optimisation par multithreading">
         <ul>
             <li><em>Légende :</em> Extrait de code Python illustrant l'utilisation du multithreading pour ne pas bloquer l'interface graphique.</li>
         </ul>
     </li>
-    <li><strong>Trace 2.2 :</strong> <img src="/assets/img/c2-2.png" alt="Capture d'écran de code Python illustrant l'optimisation par multithreading">
+    <li><strong>Trace 2.2 :</strong> <img src="assets/img/c2-2.png" alt="Capture d'écran de code Python illustrant l'optimisation par multithreading">
         <ul>
             <li><em>Légende :</em> Extrait de code Python illustrant l'utilisation du multithreading pour une génération de données optimisée.</li>
         </ul>
@@ -148,7 +148,7 @@ export class TranslationService {
 </ul>
 
 <h3>Trace 3 : Flux de Déploiement et d'Intégration d'Identity</h3>
-<img src="/assets/img/trace-3.svg" alt="Diagramme illustrant le déploiement Identity">
+<img src="assets/img/trace-3.svg" alt="Diagramme illustrant le déploiement Identity">
 <blockquote><strong>Légende :</strong> Architecture et flux de décision de l'installateur Identity pour l'intégration des fournisseurs d'identité.</blockquote>
 
 <h3>Présentation</h3>
@@ -180,7 +180,7 @@ export class TranslationService {
 </ul>
 
 <h3>Trace 4.1 : Flux de Gestion des Correctifs de l'Installateur</h3>
-<img src="/assets/img/trace-4-1.svg" alt="Diagramme illustrant la gestion des correctifs">
+<img src="assets/img/trace-4-1.svg" alt="Diagramme illustrant la gestion des correctifs">
 <blockquote><strong>Légende :</strong> Fonction d'historisation des correctifs dans la base de données de l'application.</blockquote>
 
 <h3>Savoirs mobilisés</h3>
@@ -333,7 +333,7 @@ export class TranslationService {
 </ul>
 
 <h3>Trace 1.1: Systancia Solutions Installer Architecture</h3>
-<img src="/assets/img/trace-1-1.svg" alt="Diagram illustrating the main Identity installer architecture">
+<img src="assets/img/trace-1-1.svg" alt="Diagram illustrating the main Identity installer architecture">
 <blockquote><strong>Legend:</strong> Simplified architecture of Inno Setup installers for Systancia Identity related solutions.</blockquote>
 
 <h3>Presentation</h3>
@@ -372,12 +372,12 @@ export class TranslationService {
 
 <h3>Traces</h3>
 <ol>
-    <li><strong>Trace 2.1:</strong> <img src="/assets/img/c2-1.png" alt="Python code screenshot illustrating multithreading optimization">
+    <li><strong>Trace 2.1:</strong> <img src="assets/img/c2-1.png" alt="Python code screenshot illustrating multithreading optimization">
         <ul>
             <li><em>Legend:</em> Python code extract illustrating the use of multithreading to avoid blocking the GUI.</li>
         </ul>
     </li>
-    <li><strong>Trace 2.2:</strong> <img src="/assets/img/c2-2.png" alt="Python code screenshot illustrating multithreading optimization">
+    <li><strong>Trace 2.2:</strong> <img src="assets/img/c2-2.png" alt="Python code screenshot illustrating multithreading optimization">
         <ul>
             <li><em>Legend:</em> Python code extract illustrating the use of multithreading for optimized data generation.</li>
         </ul>
@@ -414,7 +414,7 @@ export class TranslationService {
 </ul>
 
 <h3>Trace 3: Deployment and Identity Integration Flow</h3>
-<img src="/assets/img/trace-3.svg" alt="Diagram illustrating how the Identity installer manages Federation deployment or configuration with an external IdP">
+<img src="assets/img/trace-3.svg" alt="Diagram illustrating how the Identity installer manages Federation deployment or configuration with an external IdP">
 <blockquote><strong>Legend:</strong> Architecture and decision flow of the Identity installer for identity provider integration.</blockquote>
 
 <h3>Presentation</h3>
@@ -446,7 +446,7 @@ export class TranslationService {
 </ul>
 
 <h3>Trace 4.1: Installer Patch Management Flow</h3>
-<img src="/assets/img/trace-4-1.svg" alt="Diagram illustrating the process by which the installer communicates with the database to retrieve patch history">
+<img src="assets/img/trace-4-1.svg" alt="Diagram illustrating the process by which the installer communicates with the database to retrieve patch history">
 <blockquote><strong>Legend:</strong> Patch historization function in the application database.</blockquote>
 
 <h3>Mobilized Knowledge</h3>
