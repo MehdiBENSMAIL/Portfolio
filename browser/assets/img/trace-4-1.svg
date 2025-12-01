@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#f9f9f9" rx="10" ry="10"/>
+  
+  <!-- Styles -->
+  <style>
+    .box { fill: #ffffff; stroke: #c62828; stroke-width: 2px; rx: 5; ry: 5; }
+    .db { fill: #ffffff; stroke: #333; stroke-width: 2px; }
+    .text { font-family: Arial, sans-serif; font-size: 14px; fill: #333; text-anchor: middle; }
+    .arrow { stroke: #666; stroke-width: 2px; fill: none; marker-end: url(#arrowhead); }
+    .decision { fill: #fff3e0; stroke: #ef6c00; stroke-width: 2px; }
+  </style>
+  
+  <!-- Markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+
+  <!-- Installer -->
+  <rect x="50" y="180" width="150" height="60" class="box"/>
+  <text x="125" y="215" class="text">Installer (Patch Engine)</text>
+
+  <!-- Database -->
+  <path d="M 650 150 L 650 250 C 650 260 750 260 750 250 L 750 150 C 750 140 650 140 650 150" class="db"/>
+  <ellipse cx="700" cy="150" rx="50" ry="10" class="db" style="fill:none;"/>
+  <text x="700" y="205" class="text">Database</text>
+  <text x="700" y="225" class="text">(Patch History)</text>
+
+  <!-- Flow -->
+  <path d="M 200 190 L 650 190" class="arrow"/>
+  <text x="425" y="180" class="text">1. Fetch Applied Patches</text>
+
+  <path d="M 650 230 L 200 230" class="arrow"/>
+  <text x="425" y="255" class="text">2. Return List [v1.0, v1.1...]</text>
+
+  <!-- Logic -->
+  <rect x="250" y="280" width="300" height="50" class="box" style="stroke-color: #333;"/>
+  <text x="400" y="310" class="text">3. Compare with Embedded Patches</text>
+
+  <path d="M 125 240 L 125 305 L 250 305" class="arrow" style="fill:none; stroke-dasharray: 2;"/>
+
+  <!-- Decision -->
+  <polygon points="400,350 460,390 400,430 340,390" class="decision"/>
+  <text x="400" y="395" class="text">New?</text>
+
+  <path d="M 400 330 L 400 350" class="arrow"/>
+
+  <path d="M 460 390 L 550 390" class="arrow"/>
+  <text x="505" y="385" class="text">Yes</text>
+  <rect x="550" y="370" width="120" height="40" class="box" style="stroke: #2e7d32; fill: #e8f5e9;"/>
+  <text x="610" y="395" class="text">Apply Patch</text>
+
+  <path d="M 340 390 L 250 390" class="arrow"/>
+  <text x="295" y="385" class="text">No</text>
+  <rect x="130" y="370" width="120" height="40" class="box" style="stroke: #666; fill: #eee;"/>
+  <text x="190" y="395" class="text">Skip</text>
+
+</svg>
